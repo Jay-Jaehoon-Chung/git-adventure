@@ -1,105 +1,109 @@
 # Git Adventure
 
-Willkommen bei Git Adventure. Es handelt sich hierbei um ein Lernspiel zu meinem Git Workshop. Die passenden Grundlagen habe ich dir bereits direkt vermittelt, hier geht es jetzt darum, diese selbstständig interaktiv zu prägen.
+Welcome to Git Adventure. This is a learning game for my Git workshop.
+You've already learned the necessary fundamentals directly from me — now this section is about reinforcing them independently and interactively.
 
-## 💻 Notwendige Software
+## 💻 Required Software
 - **Git for Windows**  
-Für Teilnehmer mit Windows wird „Git for Windows“ benötigt.  
-[Download](https://git-scm.com/download/win)  
+For participants on Windows, “Git for Windows” is required.  
+https://git-scm.com/download/win
 
 - **Visual Studio Code**  
-Dieses Spiel ist ideal entworfen worden für die Arbeit mit Visual Studio Code.  
-  [Download](https://code.visualstudio.com)  
+This game is designed to be played ideally using Visual Studio Code.  
+https://code.visualstudio.com
 
 - **Node.js**  
-Dieses Spiel baut auf Node.js auf und dazu wird die aktuelle Node.js LTS Version empfohlen.  
-[Download](https://nodejs.org)  
+This game is built on Node.js, and the current Node.js LTS version is recommended.  
+https://nodejs.org
 
-## 🛠 Setup vom Spiel
-Das Spiel kannst du in deiner Eingabeaufforderung mit folgendem Befehl via Git ziehen:  
+## 🛠 Game Setup
+You can pull the game via Git in your command line using the following command:  
 ```bash
-git clone https://github.com/GregorBiswanger/git-adventure.git
+git clone https://github.com/Jay-Jaehoon-Chung/git-adventure.git
 ```
 
-Anschließend führst folgenden Befehl aus:
+Then run the following command:
 
 ```bash
 cd git-adventure && npm install
 ```
 
-## 🎮 Das Spiel
-Das Spiel führt dich über Markdown-Dokumente aus dem Docs-Verzeichnis. Hier wird bei jedem Level aufstieg ein neues Dokument freigeschaltet. Es beginnt mit `\docs\01-level.md`.
+## 🎮 The Game
+The game guides you through Markdown documents in the `docs` directory.  
+Each time you level up, a new document is unlocked.  
+It begins with `\docs\01-level.md`.
 
-## 👩‍🏫 Ein Level Abschließen
-Sobald du die beschriebenen Schritte vom aktuellen Level abgeschlossen hast, führst du in der Eingabeaufforderung den folgenden Befehl aus:
+## 👩‍🏫 Completing a Level
+Once you have completed the steps described in the current level, run the following command in the command line:
 
 ```bash
 npm start
 ```
 
-## 😫 Hilfe
-Solltest du stark durcheinandergekommen sein. Sollte dir der folgende Git Befehl dabei helfen, das Level nochmal von vorne beginnen zu können. Gehe in dein `my-project` Ordner und gebe ein:
+## 😫 Help
+If you get completely mixed up, the following Git command may help you restart the level from the beginning.  
+Go into your `my-project` folder and enter:
 
 ```bash
 git reset --hard
 ```
 
-Andernfalls gebe mir einfach Bescheid.
+Otherwise, just let me know and I’ll help.
 
-## 📈 Die Level
-Hier ist eine Auflistung der Level und deren Inhalt:
+## 📈 The Levels
+Here is a list of the levels and their content:
 
-- **Level 1** - Erstellen eines Projekts
-- **Level 2** - Änderungen machen
-- **Level 3** - Stating der Änderungen
-- **Level 4** - Änderungen festhalten
-- **Level 5** - Die Zustände
-- **Level 6** - History
-- **Level 7** - Aliases
-- **Level 8** - Ältere Versionen bekommen
-- **Level 9** - Tagging
-- **Level 10** - Lokale Änderungen verwerfen (vor dem Staging)
-- **Level 11** - Staged Änderungen abbrechen (vor dem Festschreiben)
-- **Level 12** - Abbrechen von Commits
-- **Level 13** - Commits aus einem Branch entfernen
-- **Level 14** - Entfernen des oops-Tags
-- **Level 15** - Commits ändern
-- **Level 16** - Verschieben von Dateien
-- **Level 17** - Weitere Informationen zur Struktur
-- **Level 18** - Inside Git: Das .git-Verzeichnis
-- **Level 19** - Inside Git: Direktes Arbeiten mit Git-Objekten
-- **Level 20** - Branch erstellen
-- **Level 21** - Navigieren in Branches
-- **Level 22** - Änderungen am Main-Branch
-- **Level 23** - Sehe dir die verschiedenen Branches an
-- **Level 24** - Merging (Zusammenführen)
-- **Level 25** - Erstelle einen Konflikt
-- **Level 26** - Konflikte lösen
-- **Level 27** - Relocating als Alternative zu Merging
-- **Level 28** - Merging vom Main-Branch
-- **Level 29** - Mehrere Repositories
-- **Level 30** - Untersuche das geklonte Repository
-- **Level 31** - Remote branches
-- **Level 32** - Ändern des ursprünglichen Repository
-- **Level 33** - Änderungen abrufen
-- **Level 34** - Merging gezogener Änderungen
-- **Level 35** - Pullen und Zusammenführen von Änderungen
-- **Level 36** - Hinzufügen eines Tracking-Branch
-- **Level 37** - Bare Repository
-- **Level 38** - Hinzufügen eines Remote-Repositories
-- **Level 39** - Änderungen übermitteln
-- **Level 40** - Allgemeine Änderungen ziehen
-- **Level 41** - Danke!
+- **Level 1** – Creating a Project  
+- **Level 2** – Making Changes  
+- **Level 3** – Staging Changes  
+- **Level 4** – Recording Changes  
+- **Level 5** – States  
+- **Level 6** – History  
+- **Level 7** – Aliases  
+- **Level 8** – Getting Older Versions  
+- **Level 9** – Tagging  
+- **Level 10** – Discarding Local Changes (Before Staging)  
+- **Level 11** – Undoing Staged Changes (Before Committing)  
+- **Level 12** – Undoing Commits  
+- **Level 13** – Removing Commits from a Branch  
+- **Level 14** – Removing the oops Tag  
+- **Level 15** – Amending Commits  
+- **Level 16** – Moving Files  
+- **Level 17** – More Information About the Structure  
+- **Level 18** – Inside Git: The .git Directory  
+- **Level 19** – Inside Git: Working Directly with Git Objects  
+- **Level 20** – Creating a Branch  
+- **Level 21** – Navigating Branches  
+- **Level 22** – Changing the Main Branch  
+- **Level 23** – View the Different Branches  
+- **Level 24** – Merging  
+- **Level 25** – Creating a Conflict  
+- **Level 26** – Resolving Conflicts  
+- **Level 27** – Relocating as an Alternative to Merging  
+- **Level 28** – Merging from the Main Branch  
+- **Level 29** – Multiple Repositories  
+- **Level 30** – Inspect the Cloned Repository  
+- **Level 31** – Remote Branches  
+- **Level 32** – Changing the Original Repository  
+- **Level 33** – Fetching Changes  
+- **Level 34** – Merging Fetched Changes  
+- **Level 35** – Pulling and Merging Changes  
+- **Level 36** – Adding a Tracking Branch  
+- **Level 37** – Bare Repository  
+- **Level 38** – Adding a Remote Repository  
+- **Level 39** – Submitting Changes  
+- **Level 40** – Pulling Shared Changes  
+- **Level 41** – Thank you!
 
-## 📑 Spickzettel
-Hier ein Cheat Sheet für dich:  
-![Git Cheat Sheet](https://github.com/GregorBiswanger/git-adventure/blob/main/git-cheat-sheet.jpg)
+## 📑 Cheat Sheet
+Here is a cheat sheet for you:  
+![Git Cheat Sheet](https://github.com/Jay-Jaehoon-Chung/git-adventure.git/blob/main/git-cheat-sheet.jpg)
 
-# ✨✨ Und nun viel Spaß mit Git Adventure! ✨✨
+# ✨✨ And now, have fun with Git Adventure! ✨✨
 
-🎉 License
+🎉 License  
 MIT-licensed
 
 Enjoy!
 
-(c) Gregor Biswanger - [@BFreakout](https://twitter.com/BFreakout)
+(c) Gregor Biswanger – @BFreakout
