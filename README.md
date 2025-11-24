@@ -97,7 +97,7 @@ Here is a list of the levels and their content:
 
 ## 📑 Cheat Sheet
 Here is a cheat sheet for you:  
-![Git Cheat Sheet](https://github.com/Jay-Jaehoon-Chung/git-adventure.git/blob/main/git-cheat-sheet.jpg)
+![Git Cheat Sheet](https://github.com/Jay-Jaehoon-Chung/git-adventure/blob/EngTrans/git-cheat-sheet.jpg)
 
 # ✨✨ And now, have fun with Git Adventure! ✨✨
 
