@@ -1,16 +1,17 @@
-# Merging vom Main-Branch
-## Ziel
-- Wir haben unseren Style-Branch mit dem Main-Branch auf dem neuesten Stand gehalten (unter Verwendung von Rebase), aber lass uns jetzt die Änderungen des Style-Branches wieder in den Main zusammenführen.
+# Merging from the Main Branch
 
-## 1. Style mit Main verschmelzen
+## Goal
+- We kept our style branch up to date with main (using rebase), but now let’s merge the style branch changes back into main.
 
-Befehl:  
+## 1. Merge style into main
+
+Command:  
 ```bash
 git checkout main
 git merge style
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ git checkout main
 # Switched to branch 'main'
@@ -25,18 +26,18 @@ $ git merge style
 #  create mode 100644 lib/style.css
 ```
 
-Da der letzte Main-Commit direkt vor dem letzten Commit des Style-Branches liegt, kann Git schnell vorspulen, indem er einfach den Branch-Zeiger nach vorne bewegt und auf denselben Commit vom Style-Branch zeigt.
+Since the last main commit is directly behind the last style commit, Git can fast‑forward by simply moving the branch pointer forward so that it points to the same commit as the style branch.
 
-Konflikte treten bei der Fast-Forward-Zusammenführung nicht auf.
+Fast-forward merges do not create conflicts.
 
-## 2. Überprüfe die Protokolle
+## 2. Review the logs
 
-Befehl:  
+Command:  
 ```bash
 git hist
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ git hist
 # * 0d4bc09 2022-01-16 | Updated index.html (HEAD -> main, style) [Gregor Biswanger]
@@ -52,7 +53,7 @@ $ git hist
 # * b617603 2022-01-14 | First Commit [Gregor Biswanger]
 ```
 
-Jetzt sind Style und Main identisch.
+Now style and main are identical.
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/29-level.md).
+## Complete the level
+Did you do everything correctly? Check it using `npm start` inside the Git Adventure directory and unlock the next level (docs/29-level.md).

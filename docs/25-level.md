@@ -1,11 +1,12 @@
-# Erstelle einen Konflikt
-## Ziel
-- Erstellen eines Konflikts von Änderungen im Main-Zweig.
+# Creating a Conflict
 
-## 1. Kehre zur Main zurück und erzeuge Konflikte
-Kehre zum Main-Branch zurück und nehme die folgenden Änderungen vor:
+## Goal
+- Create a conflict of changes on the main branch.
 
-Befehl:  
+## 1. Return to main and create conflicts
+Return to the main branch and make the following changes:
+
+Command:  
 ```bash
 git checkout main
 ```
@@ -23,22 +24,22 @@ lib/hallo.html:
 </html>
 ```
 
-Befehl:  
+Command:  
 ```bash
 git add lib/hallo.html
 git commit -m "Life is great!"
 ```
 
-(**Warnung:** Stelle sicher, dass du einfache Anführungszeichen verwendet hast, um Probleme mit bash und dem Ausrufezeichen zu vermeiden.)
+(**Warning:** Make sure you use single quotes to avoid issues with bash and the exclamation mark.)
 
-## 2. Branches ansehen
+## 2. View branches
 
-Befehl:  
+Command:  
 ```bash
 git hist --all
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ git hist --all
 # * 080ed40 2022-01-16 | Life is great! (HEAD -> main) [Gregor Biswanger]
@@ -75,7 +76,7 @@ $ git hist --all
 # * b617603 2022-01-14 | First Commit [Gregor Biswanger]
 ```
 
-Nach dem hinzugefügten README-Commit wurde der Main-Zweig mit dem Style-Zweig zusammengeführt, aber es gibt einen zusätzlichen Main-Commit, der nicht wieder mit dem Style-Zweig zusammengeführt wurde.
+After the added README commit, the main branch was merged into the style branch, but there is an additional main commit that has not been merged back into the style branch.
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/26-level.md).
+## Complete the level
+Did you do everything correctly? Check it using the `npm start` command inside the Git Adventure directory and unlock the next level (docs/26-level.md).

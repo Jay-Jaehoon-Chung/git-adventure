@@ -1,34 +1,34 @@
 # Tagging
 
-## Ziel
-- Um zu lernen, wie man Commits für zukünftige Referenzen taggt.
+## Goal
+- To learn how to tag commits for future reference.
 
-Nennen wir die aktuelle Version des Hello World-Programms Version 1 (v1).
+Let’s call the current version of the Hello World program version 1 (v1).
 
-## 1. Tag für die erste Version erstellen
+## 1. Create a tag for the first version
 
-Befehl:  
+Command:  
 ```bash
 git tag v1
 ```
 
-Jetzt wird die aktuelle Version der Seite als v1 bezeichnet.
+Now the current version of the page is labeled v1.
 
-## 2. Tags für frühere Versionen
-Taggen wir die Version vor der aktuellen Version mit dem Namen `v1-beta`. Zuerst checken wir die vorherige Version aus. Anstatt den Hash nachzuschlagen, verwenden wir die Notation `^`, die **„das Elternteil von v1“** angibt.
+## 2. Tags for earlier versions
+Let’s tag the version before the current one with the name `v1-beta`. First, we check out the previous version. Instead of looking up the hash, we use the notation `^`, which means **“the parent of v1.”**
 
-Wenn die Notation `v1^` Probleme verursacht, versuche `v1~1` zu verwenden um auf dieselbe Version zu verweisen. Diese Notation bedeutet **„die erste Version vor v1“**.
+If the notation `v1^` causes problems, try using `v1~1` to refer to the same version. This notation means **“the first version before v1.”**
 
-Befehl:  
+Command:  
 ```bash
 git checkout v1^
 code hallo.html
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ git checkout v1^
-Mehr? ~1
+More? ~1
 # Note: switching to 'v1~1'.
 # 
 # You are in 'detached HEAD' state. You can look around, make experimental
@@ -49,23 +49,23 @@ Mehr? ~1
 # HEAD is now at d9352d1 Added standard HTML page tags
 ```
 
-Dies ist die Version mit den Tags `<html>` und `<body>`, aber ohne `<head>`. Nehmen wir an, es ist die v1-Beta-Version.
+This is the version with the tags `<html>` and `<body>`, but without `<head>`. Let’s assume this is the v1-beta version.
 
-Befehl:  
+Command:  
 ```bash
 git tag v1-beta
 ```
 
-## 3. Auschecken anhand des Tag-Namens
-Versuche nun, zwischen den beiden getaggten Versionen auszuchecken.
+## 3. Checking out using the tag name
+Now try checking out between the two tagged versions.
 
-Befehl:  
+Command:  
 ```bash
 git checkout v1
 git checkout v1-beta
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ git checkout v1
 # Previous HEAD position was d9352d1 Added standard HTML page tags
@@ -75,30 +75,30 @@ $ git checkout v1-beta
 # HEAD is now at d9352d1 Added standard HTML page tags
 ```
 
-## 4. Anzeigen von Tags mit dem Tag-Befehl
-Du kannst die verfügbaren Tags mit dem `git tag` Befehl anzeigen.
+## 4. Viewing tags with the tag command
+You can show the available tags with the `git tag` command.
 
-Befehl:  
+Command:  
 ```bash
 git tag
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ git tag
 # v1
 # v1-beta
 ```
 
-## 5. Anzeigen von Tags in der History
-Du kannst auch im Protokoll nach Tags suchen.
+## 5. Viewing tags in the history
+You can also search the log for tags.
 
-Befehl:  
+Command:  
 ```bash
 git hist main --all
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 * 5a9e60b 2022-01-15 | Added HTML header (tag: v1, main) [Gregor Biswanger]
 * d9352d1 2022-01-15 | Added standard HTML page tags (HEAD, tag: v1-beta) [Gregor Biswanger]
@@ -106,7 +106,7 @@ Ergebnis:
 * b617603 2022-01-14 | First Commit [Gregor Biswanger]
 ```
 
-Du kannst Tags (`v1` und `v1-beta`) zusammen mit dem Namen des Zweigs (main) im Protokoll sehen. Der HEAD zeigt den Commit, den du ausgecheckt hast (derzeit v1-beta).
+You can see tags (`v1` and `v1-beta`) along with the name of the branch (main) in the log. The HEAD points to the commit you checked out (currently v1-beta).
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/10-level.md).
+## Complete the level
+Did you do everything correctly? Check it with the `npm start` command inside the Git Adventure directory and unlock the next level (docs/10-level.md).

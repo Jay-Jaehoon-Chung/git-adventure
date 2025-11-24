@@ -1,49 +1,49 @@
-# Erstellen eines Projekts
+# Creating a Project
 
-## Ziele
-Um zu lernen, wie man ein Git-Repository von Grund auf neu erstellt und den Status überprüft.
+## Goals
+To learn how to create a Git repository from scratch and check the status.
 
-## 1. Erstelle eine „Hallo Welt!“ Webseite
-Beginne mit einem leeren Arbeitsverzeichnis. Erzeuge das Verzeichnis mit dem Namen „my-project“ im Root vom Git Adventure-Verzeichnis. Anschließend erstelle darin eine hallo.html-Datei mit den folgenden Inhalt: `Hallo Welt!`.
+## 1. Create a “Hello World!” webpage
+Start with an empty working directory. Create the directory named “my-project” in the root of the Git Adventure directory. Then create a hallo.html file inside it with the following content: `Hallo Welt!`.
 
-Befehle:  
+Commands:  
 ```bash
 mkdir my-project
 cd my-project 
 code hallo.html
 ```
 
-hallo.html Inhalt:  
+hallo.html content:  
 ```html
 Hallo Welt!
 ```
 
-## 2. Erstelle ein Repository
-Du hast also ein Verzeichnis, das eine Datei enthält. Führe den Befehl `git init` aus, um ein Git-Repo aus diesem Verzeichnis zu erstellen.
+## 2. Create a repository
+So you have a directory that contains a file. Run the `git init` command to create a Git repo from this directory.
 
-Befehl:  
+Command:  
 ```bash
 git init
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ git init
 # Initialized empty Git repository in ../git-adventure/my-project/.git/
 ```
 
-## 3. Füge die Webseite zum Repository hinzu
-Lass uns nun die Webseite zum Repository hinzufügen.
+## 3. Add the webpage to the repository
+Now let’s add the webpage to the repository.
 
-Befehl:  
+Command:  
 ```bash
 git add hallo.html
 git commit -m "First Commit"
 ```
 
-Du wirst sehen...
+You will see...
 
-Ergebnis:  
+Result:  
 ```bash
 $ git add hallo.html
 $ git commit -m "First Commit"
@@ -52,26 +52,26 @@ $ git commit -m "First Commit"
 # create mode 100644 hallo.html
 ```
 
-## 4. Überprüfe den Status des Repositories
-Verwende den Befehl `git status`, um den aktuellen Status des Repositories zu überprüfen.
+## 4. Check the status of the repository
+Use the `git status` command to check the current status of the repository.
 
-Befehl:  
+Command:  
 ```bash
 git status
 ```
 
-Du wirst sehen...
+You will see...
 
-Ergebnis:  
+Result:  
 ```bash
 $ git status  
 # On branch main  
 # nothing to commit (working directory clean)`
 ```
 
-Der Befehl überprüft den Status und meldet, dass es nichts zu übergeben gibt, was bedeutet, dass das Repository den aktuellen Status des Arbeitsverzeichnisses speichert und keine Änderungen aufzuzeichnen sind.
+The command checks the status and reports that there is nothing to commit, which means that the repository stores the current state of the working directory and there are no changes to record.
 
-Wir werden den Befehl `git status` verwenden, um den Status sowohl des Arbeitsverzeichnisses als auch des Repositories zu überwachen.
+We will use the `git status` command to monitor the status of both the working directory and the repository.
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/02-level.md).
+## Complete the level
+Did you do everything correctly? Check it using the `npm start` command inside the Git Adventure directory and unlock the next level (docs/02-level.md).

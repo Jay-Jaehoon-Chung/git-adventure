@@ -1,12 +1,13 @@
-# Änderungen am Main-Branch
-## Ziel
-- Zu lernen, wie man mit mehreren Branches mit unterschiedlichen (manchmal widersprüchlichen) Änderungen arbeitet.
+# Changes on the Main Branch
 
-Zu der Zeit, als du den Style-Zweig geändert hast, hat jemand beschlossen, den Main-Zweig zu ändern. Er fügte eine README-Datei hinzu.
+## Goal
+- To learn how to work with multiple branches that have different (sometimes conflicting) changes.
 
-## 1. README.md-Datei im Main Branch erzeugen.
+While you were editing the style branch, someone decided to change the main branch. They added a README file.
 
-Befehl:  
+## 1. Create README.md file on the main branch
+
+Command:  
 ```bash
 git checkout main
 echo This is the Hello World example from the git tutorial. > README.md
@@ -14,5 +15,5 @@ git add README.md
 git commit -m "Added README"
 ```
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/23-level.md).
+## Complete the level
+Did you do everything correctly? Check it using the `npm start` command inside the Git Adventure directory and unlock the next level (docs/23-level.md).

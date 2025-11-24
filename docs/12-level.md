@@ -1,14 +1,15 @@
-# Abbrechen von Commits
-## Ziel
-- Wie Commits vom lokalen Repository rückgängig gemacht werden.
+# Canceling Commits
 
-## 1. Abbrechen von Commits
-Manchmal stellest du fest, dass die neuen Commits falsch sind und abbrechen möchtest. Es gibt mehrere Möglichkeiten, das Problem zu lösen und wir verwenden hierbei die sicherste.
+## Goal
+- How to undo commits from the local repository.
 
-Um das Commit abzubrechen, erstellen wir ein neues Commit und stornieren die unerwünschten Änderungen.
+## 1. Canceling commits
+Sometimes you realize that the new commits are wrong and you want to cancel them. There are several ways to solve the problem, and we will use the safest one.
 
-## 2. Bearbeite die Datei und führe einen Commit durch
-Ersetze `hallo.html` durch den folgenden Inhalt:
+To cancel the commit, we create a new commit and revert the unwanted changes.
+
+## 2. Edit the file and make a commit
+Replace `hallo.html` with the following content:
 
 ```html
 <html>
@@ -21,44 +22,44 @@ Ersetze `hallo.html` durch den folgenden Inhalt:
 </html>
 ```
 
-Befehl:  
+Command:  
 ```bash
 git add hallo.html
 git commit -m "Oops, we didn't want this commit"
 ```
 
-## 3. Mache einen Commit mit neuen Änderungen, die vorherige Änderungen verwerfen
-Um den Commit abzubrechen, müssen wir einen Commit erstellen, der die Änderungen löscht, die durch einen unerwünschten Commit gespeichert wurden.
+## 3. Make a commit that discards previous changes
+To cancel the commit, we need to create a commit that deletes the changes saved by an unwanted commit.
 
-Befehl:  
+Command:  
 ```bash
 git revert HEAD
 ```
 
-Gehe zum Editor, wo du die Standard Commit-Nachricht bearbeiten oder unverändert lassen möchtest. Speichere und schließe die Datei.
+Go to the editor, where you can edit the default commit message or leave it unchanged. Save and close the file.
 
-Du wirst sehen...
+You will see...
 
-Ergebnis:  
+Result:  
 ```bash
 $ git revert HEAD --no-edit
 # [main 45fa96b] Revert "Oops, we didn't want this commit"
 # 1 files changed, 1 insertions(+), 1 deletions(-)
 ```
 
-Da wir den letzten Commit abgebrochen haben, können wir `HEAD` als Argument für den Abbruch verwenden. Wir können jeden zufälligen Commit im Verlauf stornieren und auf seinen Hash-Wert hinweisen.
+Since we canceled the last commit, we can use `HEAD` as the argument for the cancellation. We can revert any commit in the history by referencing its hash value.
 
-**Hinweis:** Der `--no-edit` Parameter kann ignoriert werden. Es war notwendig, die Ausgabedaten zu generieren, ohne den Editor zu öffnen.
+**Note:** The `--no-edit` parameter can be ignored. It was only necessary to generate the output data without opening the editor.
 
-## 4. Überprüfe das Protokoll
-Die Überprüfung des Protokolls zeigt die unerwünschten Abbrüche und Festschreibungen in unserem Repository.
+## 4. Check the log
+Checking the log shows the unwanted reverts and commits in our repository.
 
-Befehl:  
+Command:  
 ```bash
 git hist
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ git hist
 # * 744ff5f 2022-01-16 | Revert "Oops, we didn't want this commit" (HEAD -> main) [Gregor Biswanger]
@@ -69,7 +70,7 @@ $ git hist
 # * b617603 2022-01-14 | First Commit [Gregor Biswanger]
 ```
 
-Diese Technik kann auf jeden Commit angewendet werden (es kann jedoch zu Konflikten kommen). Es kann sogar in öffentlichen Branches von Remote-Repositories sicher verwendet werden.
+This technique can be applied to any commit (although conflicts may occur). It can even be used safely in public branches of remote repositories.
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/13-level.md).
+## Complete the level
+Did you do everything correctly? Check it with the command `npm start` inside the Git Adventure directory and unlock the next level (docs/13-level.md).

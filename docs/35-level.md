@@ -1,15 +1,16 @@
-# Pullen und Zusammenführen von Änderungen
-## Ziel
-- Zu lernen, dass der `git pull` Befehl mit `git fetch` plus `git merge` identisch ist.
+# Pulling and Merging Changes
 
-Wir werden nicht den gesamten Prozess des Ziehens einer neuen Änderung durchgehen, aber ich möchte, dass du Folgendes weißt:
+## Goal
+- To learn that the `git pull` command is identical to `git fetch` plus `git merge`.
 
-`git pull` ist eigentlich äquivalent zu den folgenden zwei Schritten:
+We will not go through the entire process of pulling a new change, but here is what you need to know:
+
+`git pull` is actually equivalent to the following two steps:
 
 ```bash
 git fetch
 git merge origin/main
 ```
 
-## Level abschließen
-Gehe direkt ins nächste Level mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis (docs/36-level.md).
+## Complete the level
+Go directly to the next level with the `npm start` command inside the Git-Adventure directory (docs/36-level.md).

@@ -1,9 +1,10 @@
-# Weitere Informationen zur Struktur
-## Ziel
-- Füge eine weitere Datei in unserem Repository hinzu.
+# Further Information on the Structure
 
-## 1. Hinzufügen von index.html
-Lass uns eine index.html-Datei zum Repository hinzufügen. Die folgende Datei ist perfekt für diesen Zweck.
+## Goal
+- Add another file to our repository.
+
+## 1. Adding index.html
+Let’s add an index.html file to the repository. The following file is perfect for this purpose.
 
 index.html  
 ```html
@@ -14,14 +15,14 @@ index.html
 </html>
 ```
 
-Füge die Datei hinzu und mache einen Commit.
+Add the file and make a commit.
 
 ```bash
 git add index.html
 git commit -m "Added index.html."
 ```
 
-Wenn du jetzt die index.html öffnest, solltest du einen Teil der Hallo-Seite in einem kleinen Fenster sehen.
+When you now open index.html, you should see part of the hello page in a small window.
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/18-level.md).
+## Complete the level
+Did you do everything correctly? Check it with the `npm start` command inside the Git Adventure directory and unlock the next level (docs/18-level.md).

@@ -1,4 +1,5 @@
-# Danke!
-Das war es! Dieses Spiel wurde durch Git Branches und Unit-Tests ermöglicht. Erkunde die lokalen Branches wenn du möchtest.
+# Thank you!
+That's it! This game was made possible through Git branches and unit tests.
+Feel free to explore the local branches if you’d like.
 
-Ich wünsche dir jetzt viel Spaß mit Git. 🚀🚀🚀
+I wish you lots of fun with Git. 🚀🚀🚀

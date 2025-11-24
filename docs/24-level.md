@@ -1,18 +1,19 @@
-# Merging (Zusammenführen)
-## Ziel
-- Lerne wie du zwei unterschiedliche Branches zu einem Branch zusammenführst.
+# Merging
 
-## 1. Branches zusammenführen
-Beim Zusammenführen werden Änderungen aus zwei Zweigen in einen übertragen. Gehen wir zurück zum Style-Zweig und führe ihn mit main zusammen.
+## Goal
+- Learn how to merge two different branches into one.
 
-Befehl:  
+## 1. Merge branches
+When merging, changes from two branches are combined into one. Let's go back to the style branch and merge it with main.
+
+Command:  
 ```bash
 git checkout style
 git merge main
 git hist --all
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ git checkout style
 # Switched to branch 'style'
@@ -38,9 +39,9 @@ $ git hist --all
 # * b617603 2022-01-14 | First Commit [Gregor Biswanger]
 ```
 
-Durch regelmäßiges Zusammenführen des Main-Zweigs mit dem Style-Zweig kannst du alle Änderungen oder Modifikationen am Main übernehmen, um die Kompatibilität mit den Style-Änderungen in der Hauptlinie aufrechtzuerhalten.
+By regularly merging the main branch into the style branch, you can incorporate all changes or modifications made on main to maintain compatibility with the style changes.
 
-Allerdings sieht die Commit-Grafik dadurch hässlich aus. Später werden wir eine Standortverlagerung als Alternative zur Fusion betrachten.
+However, the commit graph becomes messy. Later, we will look at rebasing as an alternative to merging.
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/25-level.md).
+## Complete the level
+Did you do everything correctly? Check it with the `npm start` command inside the Git Adventure directory and unlock the next level (docs/25-level.md).

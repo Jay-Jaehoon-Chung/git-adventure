@@ -1,17 +1,18 @@
-# Änderungen abrufen
-## Ziel
-- Wie wir Änderungen aus einem Remote-Repository ziehen können.
+# Fetching Changes
 
-Befehl:
+## Goal
+- Learn how to pull changes from a remote repository.
+
+Command:
 ```bash
 cd ../cloned_my-project
 git fetch
 git hist --all
 ```
 
-**HINWEIS:** Wir befinden uns jetzt im Repository cloned_my-project.
+**NOTE:** We are now in the `cloned_my-project` repository.
 
-Ergebnis:
+Result:
 ```bash
 $ git fetch
 # remote: Enumerating objects: 5, done.
@@ -37,23 +38,25 @@ $ git hist --all
 # * b617603 2022-01-14 | First Commit [Gregor Biswanger]
 ```
 
-Im Moment enthält das Repository alle Commits aus dem ursprünglichen Repo; Sie sind jedoch nicht in die lokalen Zweige des geklonten Repositorys integriert.
+Right now, the repository contains all commits from the original repo; however, they are **not** integrated into the local branches of the cloned repository.
 
-Du findest den Commit mit dem Namen „Changed README in original repo“ im Verlauf. Beachte, dass der Commit „origin/main“ und „origin/HEAD“ enthält.
+You will find the commit “Changed README in original repo” in the history.  
+Notice that this commit contains both “origin/main” and “origin/HEAD”.
 
-Werfen wir nun einen Blick auf den Commit „Updated index.html“. Du wirst sehen, dass der lokale Main-Branch genau auf diesen Commit zeigt, nicht auf den neuen Commit, den wir gerade abgerufen haben.
+Now look at the commit “Updated index.html”.  
+You will see that the local `main` branch still points exactly to this commit — not to the new commit we just fetched.
 
-Dies bringt uns zu dem Schluss, dass der Befehl „git fetch“ neue Commits aus dem Remote-Repo holt, sie aber nicht in den lokalen Zweigen zusammenführt.
+This tells us that the `git fetch` command retrieves new commits from the remote repo, but **does not merge them into the local branches**.
 
-## 1. Überprüfen die README.md
-Wir können sehen, dass die geklonte README-Datei nicht verändert wurde.
+## 1. Check the README.md
+We can see that the cloned README file has not changed.
 
-Befehl:
+Command:
 ```bash
 code README.md
 ```
 
-Keine Änderungen, wie wir sehen können.
+No changes, as we can see.
 
-## Level abschließen
-Gehe direkt ins nächste Level mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis (docs/34-level.md).
+## Complete the level
+Go directly to the next level with the `npm start` command inside the Git Adventure directory (docs/34-level.md).

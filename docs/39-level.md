@@ -1,33 +1,34 @@
-# Änderungen übermitteln
-## Ziel
-- Um zu erfahren, wie du Änderungen an das Remote-Repository übermittelst.
+# Submitting Changes
 
-Da ein sauberes Repository normalerweise auf einem Netzwerkserver freigegeben wird, müssen wir unsere Änderungen an andere Repositories senden. Erstelle zunächst eine zu sendende Änderung. Bearbeite die README.md-Datei und führe einen Commit durch.
+## Goal
+- To learn how to submit changes to the remote repository.
+
+Since a clean repository is normally shared on a network server, we need to send our changes to other repositories. First, create a change to send. Edit the README.md file and make a commit.
 
 README.md:
 ```
-Dies ist das Hello World-Beispiel aus dem Git-Workshop.
+This is the Hello World example from the Git workshop.
 
-(Im Original geändert und auf shared gepusht.)
+(Changed in the original and pushed to shared.)
 ```
 
-Befehl:  
+Command:  
 ```bash
 git checkout main
 git add README.md
 git commit -m "Added shared comment to readme"
 ```
 
-Sende nun Änderungen an das gemeinsam genutzte Repository.
+Now send the change to the shared repository.
 
-Befehl:  
+Command:  
 ```bash
 git push shared main
 ```
 
-Das gemeinsam genutzte Repository ist dasjenige, das von uns gesendete Änderungen erhält. (Denke daran, dass wir es in der vorherigen Lektion als Remote-Repository hinzugefügt haben).
+The shared repository is the one that receives the changes we send. (Remember that we added it as a remote repository in the previous lesson.)
 
-Ergebnis:  
+Result:  
 ```bash
 $ git push shared main
 # Enumerating objects: 5, done.
@@ -40,7 +41,7 @@ $ git push shared main
 #    1f26579..4d3a273  main -> main
 ```
 
-**Hinweis:** Wir mussten den Main-Branch explizit angeben, um Änderungen zu übermitteln. Es kann automatisch konfiguriert werden, aber ich vergesse immer den Befehl.
+**Note:** We had to explicitly specify the main branch in order to submit the changes. It can be configured to do this automatically, but I always forget the command.
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/40-level.md).
+## Complete the level
+Did you do everything correctly? Check it using the `npm start` command inside the Git-Adventure directory and unlock the next level (docs/40-level.md).

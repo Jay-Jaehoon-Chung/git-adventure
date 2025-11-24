@@ -1,35 +1,35 @@
-# Mehrere Repositories
+# Multiple Repositories
 
-## Ziel
-- Wie man Kopien der Repositories erstellt.
+## Goal
+- Learn how to create copies of repositories.
 
-Bisher haben wir mit nur einem Git-Repository gearbeitet. Git eignet sich jedoch hervorragend für die Arbeit mit mehreren Repositories. Diese zusätzlichen Repositories können lokal gespeichert oder über eine Netzwerkverbindung aufgerufen werden.
+So far, we have worked with only one Git repository. However, Git is excellent for working with multiple repositories. These additional repositories can be stored locally or accessed through a network connection.
 
-Im nächsten Abschnitt erstellen wir ein neues Repo namens **„cloned_my-project“**. Wir werden das Verschieben von Änderungen von einem Repo in ein anderes und den Umgang mit Konflikten bei der Arbeit mit zwei Repositories besprechen.
+In the next section, we will create a new repo named **“cloned_my-project”**. We will discuss how to move changes from one repo to another and how to deal with conflicts when working with two repositories.
 
-In der Zwischenzeit arbeiten wir mit lokalen Repositories (die auf Ihrer lokalen Festplatte gespeichert sind). Die meisten Informationen in diesem Abschnitt können auch auf die Arbeit mit mehreren Repositories angewendet werden, unabhängig davon, ob sie lokal gespeichert oder über ein Netzwerk gemeinsam genutzt werden.
+For now, we will work with local repositories (stored on your local drive). Most of the information in this section also applies when working with multiple repos shared over a network.
 
-**HINWEIS:** Wir werden Änderungen an beiden Kopien unserer Repositories vornehmen. Beachte das Repository, in dem du dich in jeder Phase der nächsten Lektionen befindest.
+**NOTE:** We will make changes in both copies of our repositories. Pay attention to which repository you are in at each step of the next lessons.
 
-## 1. Gehe zu deinem Arbeitsverzeichnis
+## 1. Go to your working directory
 
-Gehe in das Arbeitsverzeichnis und klone dein my-project Repository.
+Go into the working directory and clone your `my-project` repository.
 
-Befehl:  
+Command:  
 ```bash
-cd..
+cd ..
 git clone my-project cloned_my-project
 ```
 
-Ergebnis:  
+Result:  
 ```bash
-$ cd..
+$ cd ..
 $ git clone my-project cloned_my-project
 # Cloning into 'cloned_my-project'...
 # done.
 ```
 
-Im Moment sollten sich zwei Repos in deinem Arbeitsverzeichnis befinden: das ursprüngliche „my-project“-Repo und das geklonte Repository mit dem Namen „cloned_my-project“.
+You should now have two repos in your working directory: the original `my-project` repo and the cloned repository named `cloned_my-project`.
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/29-level.md).
+## Complete the level
+Did you do everything correctly? Check it using the `npm start` command inside the Git Adventure directory and unlock the next level (docs/29-level.md).

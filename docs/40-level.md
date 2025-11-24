@@ -1,19 +1,20 @@
-# Allgemeine Änderungen ziehen
-## Ziel
-- Erfahre, wie du Änderungen aus dem gemeinsamen Repository ziehst.
+# Pulling Shared Changes
 
-Wechsele schnell zum geklonten Repository und ziehe die gerade an das gemeinsame Repository gesendeten Änderungen.
+## Goal
+- Learn how to pull changes from the shared repository.
 
-Befehl:
+Quickly switch to the cloned repository and pull the changes that were just sent to the shared repository.
+
+Command:
 ```bash
 cd ..\cloned_my-project
 ```
 
-**Hinweis:** Wir befinden uns jetzt im Repository `cloned_my-project`.
+**Note:** We are now in the `cloned_my-project` repository.
 
-Weitermachen mit...
+Continue with...
 
-Befehl:
+Command:
 ```bash
 git remote add shared ../my-project.git
 git branch --track shared main
@@ -21,5 +22,6 @@ git pull shared main
 code README.md
 ```
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/41-level.md).
+## Complete the level
+Did you do everything correctly?  
+Check it using the `npm start` command inside the Git Adventure directory and unlock the next level (docs/41-level.md).

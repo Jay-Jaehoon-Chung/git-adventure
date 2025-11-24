@@ -1,41 +1,45 @@
 # Remote branches
-## Ziel
-- Erfahre mehr über lokale und Remote-Branches.
 
-Werfen wir einen Blick auf die Branches in unserem geklonten Repository.
+## Goal
+- Learn more about local and remote branches.
 
-Befehl:  
+Let’s take a look at the branches in our cloned repository.
+
+Command:  
 ```bash
 git branch
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ git branch
 # * main
 ```
 
-Wie wir sehen können, ist darin nur der Main-Branch aufgeführt. Wo ist der Style-Branch? `git branch` listet standardmäßig nur die lokalen Branches auf.
+As we can see, only the main branch is listed.  
+Where is the style branch?  
+`git branch` lists only the **local** branches by default.
 
-## 1. Liste der Remote-Branches
+## 1. List all remote branches
 
-Versuche den folgenden Befehl, um alle Zweige anzuzeigen:
+Try the following command to show all branches:
 
-Befehl:  
+Command:  
 ```bash
 git branch -a
 ```
 
-Ergebnis:  
+Result:  
 ```bash
-$ git branch
+$ git branch -a
 # * main
 #   remotes/origin/HEAD -> origin/main
 #   remotes/origin/main
 #   remotes/origin/style
 ```
 
-Git listet alle Branches aus dem ursprünglichen Repo auf, aber die Remote-Repository-Branches werden nicht als lokale behandelt. Wenn wir einen eigenen style branch benötigen, müssen wir ihn selbst erstellen.
+Git lists all branches from the original repository, but the remote branches are **not** treated as local ones.  
+If we need our own local `style` branch, we must create it ourselves.
 
-## Level abschließen
-Gehe direkt ins nächste Level mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis (docs/32-level.md).
+## Complete the level
+Go directly to the next level using the `npm start` command inside the Git Adventure directory (docs/32-level.md).

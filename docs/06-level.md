@@ -1,18 +1,18 @@
 # History
 
-## Ziel
-- Um zu lernen, den Verlauf des Projekts anzuzeigen.
+## Goal
+- To learn how to display the history of the project.
 
-Das Abrufen einer Liste der vorgenommenen Änderungen ist eine Funktion des `git log` Befehls.
+Retrieving a list of the changes made is a function of the `git log` command.
 
-Befehl:  
+Command:  
 ```bash
 git log
 ```
 
-Du wirst sehen...
+You will see...
 
-Ergebnis:  
+Result:  
 ```bash
 commit 5a9e60b06695c5cf6b84087828f1afaef75032af (HEAD -> main)
 Author: Gregor Biswanger <gregor.biswanger@web-enliven.de>
@@ -39,20 +39,20 @@ Date:   Fri Jan 14 22:14:01 2022 +0100
     First Commit
 ```
 
-Hier ist eine Liste aller vier Commits zum Repository, die wir bisher machen konnten.
+Here is a list of all four commits to the repository that we have been able to make so far.
 
-## 1. History einzeilig
+## 1. One-line history
 
-Du hast die volle Kontrolle darüber, was das Protokoll anzeigt. Ich mag das einzeilige Format:
+You have full control over what the log displays. I like the one-line format:
 
-Befehl:  
+Command:  
 ```bash
 git log --pretty=oneline
 ```
 
-Du wirst sehen...
+You will see...
 
-Ergebnis:  
+Result:  
 ```bash
 5a9e60b06695c5cf6b84087828f1afaef75032af (HEAD -> main) Added HTML header
 d9352d1c7ba8bd0eceaa3a1e23440a5d3672d344 Added standard HTML page tags
@@ -60,9 +60,9 @@ d9352d1c7ba8bd0eceaa3a1e23440a5d3672d344 Added standard HTML page tags
 b617603b19fb6ef196ac33f5192297490b65d463 First Commit
 ```
 
-## 2. Steuerung der Anzeige von Einträgen
+## 2. Controlling the display of entries
 
-Es gibt viele Optionen, um auszuwählen, welche Einträge im Protokoll erscheinen. Spiele mit den folgenden Parametern herum:
+There are many options to choose which entries appear in the log. Play around with the following parameters:
 
 ```bash
 git log --pretty=oneline --max-count=2
@@ -74,22 +74,22 @@ git log --pretty=oneline --all
 
 ## 3. Getting fancy
 
-Dies ist, was ich verwende, um die Änderungen zu überprüfen, die innerhalb der letzten Woche vorgenommen wurden. Ich werde `--author=Gregor` hinzufügen, wenn ich nur die von mir vorgenommenen Änderungen sehen möchte.
+This is what I use to check the changes made within the last week. I will add `--author=Gregor` if I only want to see the changes I made.
 
 ```bash
 git log --all --pretty=format:"%h %cd %s (%an)" --since="7 days ago"
 ```
 
-## 4. Das ultimative Format des Protokolls
+## 4. The ultimate log format
 
-Im Laufe der Zeit fand ich das folgende Protokollformat am besten geeignet.
+Over time, I found the following log format most suitable.
 
-Befehl:  
+Command:  
 ```bash
 git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
 ```
 
-Ergebnis:
+Result:
 ```bash
 * 5a9e60b 2022-01-15 | Added HTML header (HEAD -> main) [Gregor Biswanger]
 * d9352d1 2022-01-15 | Added standard HTML page tags [Gregor Biswanger]
@@ -97,18 +97,18 @@ Ergebnis:
 * b617603 2022-01-14 | First Commit [Gregor Biswanger]
 ```
 
-Schauen wir es uns im Detail an:
+Let’s look at it in detail:
 
-- `--pretty="..."` definiert das Ausgabeformat.  
-- `%h` ist der abgekürzte Hash des Commit  
-- `%d` Commit-Dekorationen (z. B. Branch heads oder Tags)  
-- `%ad` ist das Commit-Datum  
-- `%s` ist der Kommentar  
-- `%an` ist der Name des Autors  
-- `--graph` weist git an, den Commit-Baum in Form eines ASCII-Graph-Layouts anzuzeigen  
-- `--date=short` hält das Datumsformat kurz und schön  
+- `--pretty="..."` defines the output format.  
+- `%h` is the abbreviated commit hash  
+- `%d` commit decorations (e.g., branch heads or tags)  
+- `%ad` is the commit date  
+- `%s` is the comment  
+- `%an` is the author's name  
+- `--graph` tells Git to display the commit tree in the form of an ASCII graph layout  
+- `--date=short` keeps the date format short and nice  
 
-Jedes Mal, wenn du ein Protokoll sehen möchtest, müsst du also viel tippen. Glücklicherweise werden wir in der nächsten Lektion mehr über die Git-Aliase erfahren.
+Every time you want to see a log, you would have to type a lot. Luckily, in the next lesson we will learn more about Git aliases.
 
-## Level abschließen
-Gehe direkt ins nächste Level mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis (docs/07-level.md).
+## Complete the level
+Go directly to the next level with the command `npm start` inside the Git Adventure directory (docs/07-level.md).

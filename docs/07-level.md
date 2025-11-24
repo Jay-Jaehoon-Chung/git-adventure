@@ -1,11 +1,11 @@
 # Aliases
 
-## Ziel
-- Um zu erfahren, wie man Aliase und Shortcuts für Git-Befehle einrichtet.
+## Goal
+- To learn how to set up aliases and shortcuts for Git commands.
 
-## 1. Allgemeine aliases
+## 1. General aliases
 
-Für Windows Benutzer:  
+For Windows users:  
 ```bash
 git config --global alias.co checkout
 git config --global alias.ci commit
@@ -16,10 +16,10 @@ git config --global alias.type "cat-file -t"
 git config --global alias.dump "cat-file -p"
 ```
 
-Für Unix/Mac Benutzer:  
-`git status`, `git add`, `git commit` und `git checkout` sind gängige Befehle, daher ist es eine gute Idee, Abkürzungen für sie zu verwenden.
+For Unix/Mac users:  
+`git status`, `git add`, `git commit`, and `git checkout` are common commands, so it's a good idea to create shortcuts for them.
 
-Füge folgendes zur .gitconfig-Datei in deinem $HOME-Verzeichnis hinzu.
+Add the following to the .gitconfig file in your $HOME directory:
 
 ```ini
 [alias]
@@ -27,29 +27,29 @@ Füge folgendes zur .gitconfig-Datei in deinem $HOME-Verzeichnis hinzu.
   ci = commit
   st = status
   br = branch
-  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  hist = log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
   type = cat-file -t
   dump = cat-file -p
 ```
 
-Wir haben bereits über Commit- und Statusbefehle gesprochen. In der vorherigen Lektion haben wir den `log`-Befehl behandelt und werden den `checkout`-Befehl sehr bald kennenlernen. 
+We have already talked about commit and status commands. In the previous lesson, we covered the `log` command, and we will learn about the `checkout` command very soon.
 
-Das Wichtigste, was du aus dieser Lektion lernen kannst, ist, dass du `git st`  überall dort eingeben kannst, wo du `git status` eingeben kannst. Das Beste ist, dass der Befehl `git hist` dir hilft, den wirklich langen `log` Befehl zu vermeiden.
+The most important thing you can learn from this lesson is that you can type `git st` anywhere you could type `git status`. The best part is that the `git hist` command helps you avoid typing the really long `log` command.
 
-Fahre fort und versuche es mit den neuen Befehlen.
+Go ahead and try using the new commands.
 
-### Tipp
-Es gibt in der Community einige lustige Aliase die direkt übernommen werden können. Wie zum Beispiel [Git auf Bayerisch](https://github.com/danielauener/git-auf-deutsch/blob/master/README-bayerisch.md). Der `git init` Befehl würde dann `git ofanga` lauten.
+### Tip
+There are some fun aliases in the community that you can adopt directly. For example, [Git in Bavarian](https://github.com/danielauener/git-auf-deutsch/blob/master/README-bayerisch.md). The `git init` command would then be `git ofanga`.
 
-## 2. Definiere den hist-Alias in der .gitconfig-Datei
+## 2. Define the hist alias in the .gitconfig file
 
-Zum größten Teil werde ich weiterhin den vollständigen Befehl in dieser Anleitung eingeben. Die einzige Ausnahme ist, dass ich den oben definierten Hist-Alias verwenden werde, wenn ich das Git-Protokoll sehen muss. Stelle sicher, dass du ein Hist-Alias in deiner .gitconfig-Datei hast, bevor du fortfahrst.
+For the most part, I will continue typing the full command in this guide. The only exception is that I will use the hist alias defined above when I need to look at the Git log. Make sure you have a hist alias in your .gitconfig file before continuing.
 
-## 3. Type und Dump
-Wir haben ein paar Aliase für Befehle hinzugefügt, die wir noch nicht besprochen haben. Wir werden sehr bald über den Befehl `git branch` sprechen und der `git cat-file` Befehl ist nützlich, um git zu erkunden.
+## 3. Type and Dump
+We added a couple of aliases for commands we haven’t discussed yet. We will talk about the `git branch` command very soon, and the `git cat-file` command is useful for exploring Git.
 
 ## 4. Command aliases (optional)
-Wenn deine Shell Aliase oder Abkürzungen unterstützt, kannst du auch auf dieser Ebene Aliase hinzufügen. Ich benutze:
+If your shell supports aliases or shortcuts, you can add aliases at that level as well. I use:
 
 ```bash
 alias gs="git status "
@@ -65,15 +65,15 @@ alias got="git "
 alias get="git "
 ```
 
-Die `gco`-Abkürzung für `git checkout` ist sehr nützlich, sodass ich Folgendes eingeben kann:
+The `gco` shortcut for `git checkout` is very useful, so I can type:
 
 ```bash
 gco <branch>
 ```
 
-Um einen bestimmten Branch auszuchecken.
+to check out a specific branch.
 
-Außerdem schreibe ich `git` oft falsch. Zum Beispiel `get` oder `got`, also habe ich auch Aliase für diese erstellt.
+I also often mistype `git` as `get` or `got`, so I created aliases for those as well.
 
-## Level abschließen
-Gehe direkt ins nächste Level mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis (docs/08-level.md).
+## Complete the level
+Go directly to the next level with the command `npm start` inside the Git Adventure directory (docs/08-level.md).

@@ -1,18 +1,18 @@
-# Untersuche das geklonte Repository
+# Inspect the Cloned Repository
 
-## Ziel
-Informationen zu Branches in den Remote-Repositories finden.
+## Goal
+Find information about branches in the remote repositories.
 
-## 1. Anzeigen des geklonten Repositorys
-Werfen wir einen Blick auf unser geklontes Repository.
+## 1. Viewing the cloned repository
+Let’s take a look at our cloned repository.
 
-Befehl:  
+Command:  
 ```bash
 cd cloned_my-project
 dir
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ cd cloned_my-project
 $ dir
@@ -25,16 +25,16 @@ $ dir
 # ...
 ```
 
-Du siehst eine Liste aller Dateien in der obersten Ebene des ursprünglichen Repositorys (README, index.html und lib).
+You see a list of all files in the top level of the original repository (README, index.html and lib).
 
-## 2. Der Verlauf vom geklonten Repository
+## 2. The history of the cloned repository
 
-Befehl:  
+Command:  
 ```bash
 git hist --all
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ git hist --all
 # * 0d4bc09 2022-01-16 | Updated index.html (HEAD -> main, origin/style, origin/main, origin/HEAD) [Gregor Biswanger]
@@ -50,30 +50,33 @@ $ git hist --all
 # * b617603 2022-01-14 | First Commit [Gregor Biswanger]
 ```
 
-Du siehst eine Liste aller Commits im neuen Repository, die mit dem ursprünglichen Repository übereinstimmt. Der einzige Unterschied sollte in den Namen der Branches liegen.
+You see a list of all commits in the new repository, which matches the original repository.  
+The only difference should be in the branch names.
 
 ## 3. Remote branches
-Du wirst einen Main-Branch (HEAD) und auch seltsame Namen in der Historie finden (origin/main, origin/style und origin/HEAD). Aber was ist eigentlich origin (Herkunft/Ursprung)?
+You will find a main branch (HEAD) and some strange names in the history (origin/main, origin/style and origin/HEAD).  
+But what exactly is **origin**?
 
-Befehl:  
+Command:  
 ```bash
 git remote
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ git remote
 # origin
 ```
 
-Wir sehen, dass das geklonte Repository den Standardnamen des entfernten Repositorys kennt. Um mehr Informationen über die Herkunft zu erhalten:
+We see that the cloned repository knows the default name of the remote repository.  
+To get more information about the origin:
 
-Befehl:  
+Command:  
 ```bash
 git remote show origin
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ git remote show origin
 # * remote origin
@@ -89,7 +92,11 @@ $ git remote show origin
 #     main pushes to main (up to date)
 ```
 
-Wir können sehen, dass der „origin“ des Remote-Repositories das ursprüngliche my-project-Repo ist. Remote-Repos werden normalerweise auf einem separaten Computer oder einem zentralen Server gespeichert. Wie wir sehen, können diese jedoch auch auf ein Repository auf derselben Maschine verweisen. Der Name „origin“ ist nichts Besonderes, aber es gibt eine Konvention, ihn für das primäre zentralisierte Repository (falls vorhanden) zu verwenden.
+We can see that the “origin” of the remote repository is the original `my-project` repo.  
+Remote repositories are normally stored on another computer or a central server,  
+but as we see, they can also point to a repository on the same machine.
 
-## Level abschließen
-Gehe direkt ins nächste Level mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis (docs/31-level.md).
+The name **origin** is not special, but it is conventionally used for the primary centralized repository (if one exists).
+
+## Complete the level
+Go directly to the next level using the `npm start` command inside the Git Adventure directory (docs/31-level.md).

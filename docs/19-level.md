@@ -1,35 +1,37 @@
-# Git inside: Direktes Arbeiten mit Git-Objekten
-## Ziele
-- Untersuche die Struktur der Datenbankobjekte.
-- Verwenden von SHA1-Hashes zum Durchsuchen des Inhalts im Repository.
+# Git Inside: Working Directly with Git Objects
 
-Lass uns Git-Objekte mit einigen Tools untersuchen.
+## Goals
+- Explore the structure of the object database.
+- Use SHA1 hashes to navigate repository contents.
 
-## 1. Suche nach dem letzten Commit
+Let’s examine Git objects using a few tools.
 
-Befehl:  
+## 1. Find the latest commit
+
+Command:  
 ```bash
 git hist --max-count=1
 ```
 
-Dieser Befehl sollte den letzten Commit im Repository finden. SHA1-Hash ist auf unseren Systemen wahrscheinlich anders; Du solltest jedoch so etwas sehen:
+This command should find the most recent commit in the repository. The SHA1 hash will differ on your system, but you should see something like:
 
 ```bash
 $ git hist --max-count=1
 # * 6f888c2 2022-01-16 | Added index.html. (HEAD -> main) [Gregor Biswanger]
 ```
-## 2. Anzeige des letzten Commit
-Mit dem SHA1-Hash eines Commits wie oben...
 
-Befehl:  
+## 2. Display the latest commit
+With the SHA1 hash from the commit above…
+
+Command:  
 ```bash
 git cat-file -t <hash>
 git cat-file -p <hash>
 ```
 
-Ich sehe...
+I see…
 
-Ergebnis:  
+Result:  
 ```bash
 $ git cat-file -t 6f888c2
 # commit
@@ -42,53 +44,54 @@ $ git cat-file -p 6f888c2
 # Added index.html.
 ```
 
-**Hinweis:** Wenn du den Alias als "type" und "dump" angibst, wie in der Alias Lektion beschrieben, kannst du anstelle eines langen Befehls (den ich mir nie merke) die Befehle `git type` und `git dump` eingeben.
+**Note:** If you set aliases for `type` and `dump` as described in the Aliases lesson, you can use `git type` and `git dump` instead of typing these long commands.
 
-Dies zeigt das Commit-Objekt an, das sich im head des Main-Branches befindet.
+This shows the commit object currently at the head of the main branch.
 
-## 3. Tree suche
-Wir können den im Commit referenzierten Tree anzeigen. Dies sollte eine Dateibeschreibung (oberste Ebene) in unserem Projekt sein (für ein bestimmtes Commit). Verwende den SHA1-Hash vom Tree string aus der obigen Liste.
+## 3. Search the Tree
+We can display the tree referenced by the commit. This shows the top-level directory structure for that commit. Use the SHA1 hash from the *tree* line above.
 
-Befehl:  
+Command:  
 ```bash
 git cat-file -p <treehash>
 ```
 
-Hier ist mein Tree...
+Here is my tree…
 
-Ergebnis:  
+Result:  
 ```bash
 $ git cat-file -p 93f50a2
 # 100644 blob 3fbf4a4e2f25d15c8e3fb452ed1f38736977890f    index.html
 # 040000 tree 957e682bf8fe475a51286c22c05b5a3d66d8e893    lib
 ```
 
-Ich kann die `index.html` Datei und den lib Ordner sehen.
+You can see the `index.html` file and the `lib` directory.
 
-## 4. lib-Verzeichnis anzeigen
+## 4. Display the lib directory
 
-Befehl:  
+Command:  
 ```bash
 git cat-file -p <libhash>
 ```
 
-Hier ist mein Tree...
+Here is my tree…
 
-Ergebnis:  
+Result:  
 ```bash
 $ git cat-file -p 957e682
-# 100644 blob e1ee9cf3ff562fbd1db2c32c7fb0daf878776e38    hallo.htm
+# 100644 blob e1ee9cf3ff562fbd1db2c32c7fb0daf878776e38    hallo.html
 ```
 
-Das ist die `hallo.html` Datei.
+That's the `hallo.html` file.
 
-## 5. hallo.html-Datei anzeigen
-Befehl:  
+## 5. Display the hallo.html file
+
+Command:  
 ```bash
 git cat-file -p <hallohash>
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ git cat-file -p e1ee9cf
 # <!-- Author: Gregor Biswanger (gregor.biswanger@web-enliven.de) -->
@@ -101,10 +104,10 @@ $ git cat-file -p e1ee9cf
 # </html>
 ```
 
-Und da ist es. Tree-Objekte, Commit-Objekte und Blob-Objekte werden direkt aus dem Git-Repository angezeigt. Das ist alles, was es gibt – Trees, Blobs und Commits.
+There it is. Tree objects, commit objects, and blob objects are displayed directly from the Git repository. That’s all Git stores—trees, blobs, and commits.
 
-## 6. Erkunde selbst
-Das Git-Repository kann manuell durchsucht werden. Versuche die ursprüngliche hallo.html-Datei aus dem ersten Commit mithilfe von SHA1-Hash-Referenzen im letzten Commit manuell zu finden.
+## 6. Explore further
+The Git repository can be explored manually. Try locating the original `hallo.html` file from the first commit using SHA1 references starting from the latest commit.
 
-## Level abschließen
-Gehe direkt ins nächste Level mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis (docs/20-level.md).
+## Complete the level
+Go to the next level using the `npm start` command inside the Git Adventure directory (docs/20-level.md).

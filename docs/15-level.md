@@ -1,9 +1,10 @@
-# Commits ändern
-## Ziel
-- Um zu erfahren, wie man einen bereits bestehenden Commit ändert.
+# Changing Commits
 
-## 1. Ändere die Webseite und halte es fest
-Füge einen Autorenkommentar auf der Seite hinzu.
+## Goal
+- To learn how to modify an existing commit.
+
+## 1. Modify the webpage and commit it
+Add an author comment to the page.
 
 ```html
 <!-- Author: Gregor Biswanger -->
@@ -16,14 +17,14 @@ Füge einen Autorenkommentar auf der Seite hinzu.
 </html>
 ```
 
-Befehl:  
+Command:  
 ```bash
 git add hallo.html
 git commit -m "Add an author comment"
 ```
 
-## 2. Hoppla... Die E-Mail Adresse ist erforderlich
-Nachdem du ein commit gemacht hast, fällt dir gerade ein, dass jeder gute Kommentar die E-Mail des Autors enthalten sollte. Bearbeite die Hallo-Seite, um eine E-Mail bereitzustellen.
+## 2. Oops... The email address is required
+After making a commit, you realize that every good comment should include the author’s email address. Edit the Hello page to provide an email.
 
 ```html
 <!-- Author: Gregor Biswanger (gregor.biswanger@web-enliven.de) -->
@@ -36,16 +37,16 @@ Nachdem du ein commit gemacht hast, fällt dir gerade ein, dass jeder gute Komme
 </html>
 ```
 
-## 3. Ändere das vorherige Commit
-Wir möchten keinen weiteren Commit zum Hinzufügen der E-Mail-Adresse erstellen. Lass uns das vorherige Commit ändern und eine E-Mail-Adresse hinzufügen.
+## 3. Modify the previous commit
+We do not want to create another commit just to add the email address. Let’s modify the previous commit and add the email address.
 
-Befehl:  
+Command:  
 ```bash
 git add hallo.html
 git commit --amend -m "Add an author/email comment"
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ git add hallo.html
 $ git commit --amend -m "Add an author/email comment"
@@ -54,14 +55,14 @@ $ git commit --amend -m "Add an author/email comment"
 #  1 file changed, 1 insertion(+)
 ```
 
-## 4. Siehe Verlauf
+## 4. View history
 
-Befehl:  
+Command:  
 ```bash
 git hist
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ git hist
 # * e9c95d3 2022-01-16 | Add an author/email comment (HEAD -> main) [Gregor Biswanger]
@@ -71,7 +72,7 @@ $ git hist
 # * b617603 2022-01-14 | First Commit [Gregor Biswanger]
 ```
 
-Der neue „Autor/E-Mail“-Commit ersetzt den ursprünglichen „Autor“-Commit. Derselbe Effekt kann erzielt werden, indem der letzte Commit im Branch zurückgesetzt und neue Änderungen erneut festgeschrieben werden.
+The new “Author/Email” commit replaces the original “Author” commit. The same effect could be achieved by resetting the last commit on the branch and committing the new changes again.
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/16-level.md).
+## Complete the level
+Did you do everything correctly? Check it with the `npm start` command inside the Git Adventure directory and unlock the next level (docs/16-level.md).

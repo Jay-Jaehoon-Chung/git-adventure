@@ -1,29 +1,31 @@
-# Ändern des ursprünglichen Repository
-## Ziel
-- Um Änderungen am ursprünglichen Repository vorzunehmen, damit wir versuchen können, die Änderungen abzurufen.
+# Changing the Original Repository
 
-## 1. Nehme eine Änderung im ursprünglichen my-project-Repository vor
+## Goal
+- To make changes in the original repository so we can try fetching those changes.
 
-Befehl:  
+## 1. Make a change in the original my-project repository
+
+Command:  
 ```bash
 cd ../my-project
 ```
 
-**HINWEIS:** Wir befinden uns jetzt im `my-project` Repository.
+**NOTE:** We are now in the `my-project` repository.
 
-Nehme die folgenden Änderungen an der README.md-Datei vor:
+Make the following changes to the README.md file:
 
 ```
-Dies ist das Hello World-Beispiel aus dem Git-Workshop.
+This is the Hello World example from the Git workshop.
 ```
 
-Füge diese Änderung jetzt hinzu und übernehmen diese.
+Now add and commit this change.
 
-Befehl:  
+Command:  
 ```bash
 git add README.md
 git commit -m "Changed README in original repo"
 ```
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/33-level.md).
+## Complete the level
+Did you do everything correctly?  
+Check it using the `npm start` command inside the Git Adventure directory and unlock the next level (docs/33-level.md).

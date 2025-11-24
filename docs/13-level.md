@@ -1,27 +1,28 @@
-# Commits aus einem Branch entfernen
-## Ziel
-- Wie man die letzten Commits des Branches löscht.
+# Removing Commits from a Branch
 
-`Revert` ist ein mächtiger Befehl aus dem vorherigen Level, mit dem du alle Übertragungen an das Repository abbrechen kannst. Sowohl ursprüngliche als auch abgebrochene Commits werden jedoch im Verlauf des Branches angezeigt (bei Verwendung des `git log` Befehls).
+## Goal
+- How to delete the last commits of the branch.
 
-Oft erkennen wir, nachdem ein Commit bereits vorgenommen wurde, dass es ein Fehler war. Es wäre schön, einen Undo-Befehl zu haben, der es erlaubt, die falschen Commits sofort zu löschen. Dieser Befehl würde das Erscheinen eines oder mehrerer unerwünschter Commits im Verlauf des Git-Protokolls verhindern.
+`Revert` is a powerful command from the previous level that allows you to undo all transfers to the repository. However, both original and reverted commits are still displayed in the branch history (when using the `git log` command).
 
-## 1. Der Reset-Befehl
-Wenn eine Commit-Referenz angegeben wird (d. h. ein Branch-, Hash- oder Tag-Name), wird der `Reset`-Befehl:
+Often, after a commit has already been made, we realize that it was a mistake. It would be nice to have an undo command that allows us to immediately delete the incorrect commits. This command would prevent one or more unwanted commits from appearing in the Git log history.
 
-1. Überschreibt den aktuellen Branch, damit er auf das richtige Commit zeigt.
-1. Setzt optional die Pufferzone zurück, damit sie dem angegebenen Commit entspricht.
-1. Setzt optional das Arbeitsverzeichnis zurück, damit es mit dem angegebenen Commit übereinstimmt.
+## 1. The Reset command
+When a commit reference is specified (i.e., a branch, hash, or tag name), the `reset` command will:
 
-## 2. Überprüfe die History
-Lass uns einen schnellen Scan unseres Commit-Verlaufs durchführen.
+1. Overwrite the current branch so that it points to the correct commit.
+2. Optionally reset the staging area so that it matches the specified commit.
+3. Optionally reset the working directory so that it matches the specified commit.
 
-Befehl:  
+## 2. Check the history
+Let’s do a quick scan of our commit history.
+
+Command:  
 ```bash
 git hist
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ git hist
 # * 744ff5f 2022-01-16 | Revert "Oops, we didn't want this commit" (HEAD -> main) [Gregor Biswanger]
@@ -32,26 +33,26 @@ $ git hist
 # * b617603 2022-01-14 | First Commit [Gregor Biswanger]
 ```
 
-Wir sehen, dass die letzten beiden Commits in diesem Branch „Oops“ und „Revert Oops“ sind. Lass uns diese beiden mit dem Reset-Befehl entfernen.
+We see that the last two commits in this branch are “Oops” and “Revert Oops.” Let’s remove these two using the reset command.
 
-## 3. Markiere zuerst diesen Branch
-Lass uns den letzten Commit mit einem Tag markieren, damit du ihn nach dem Entfernen eines Commits finden kannst.
+## 3. First mark this branch
+Let’s mark the last commit with a tag so that you can find it after removing a commit.
 
-Befehl:  
+Command:  
 ```bash
 git tag oops
 ```
 
-## 4. Commit auf vorheriges "Oops" zurücksetzen
-Im Verlaufsprotokoll oben befindet sich der mit „v1“ gekennzeichnete Commit vor den „Oops“- und „Revert Oops“-Commits. Lass uns den Branch auf diesen Punkt zurücksetzen. Da der Branch ein Tag hat, können wir den Tag-Namen im Reset-Befehl verwenden (wenn er kein Tag hat, können wir den Hash-Wert verwenden).
+## 4. Reset commit to previous "Oops"
+In the history log above, the commit labeled “v1” is before the “Oops” and “Revert Oops” commits. Let’s reset the branch to this point. Since the branch has a tag, we can use the tag name in the reset command (if it didn’t have a tag, we could use the hash value).
 
-Befehl:  
+Command:  
 ```bash
 git reset --hard v1
 git hist
 ```
 
-Ergebnis:
+Result:
 ```bash
 # * 5a9e60b 2022-01-15 | Added HTML header (HEAD -> main, tag: v1) [Gregor Biswanger]
 # * d9352d1 2022-01-15 | Added standard HTML page tags (tag: v1-beta) [Gregor Biswanger]
@@ -59,17 +60,17 @@ Ergebnis:
 # * b617603 2022-01-14 | First Commit [Gregor Biswanger]
 ```
 
-Unser Main-Branch zeigt auf Commit v1 und die Commits „Revert Oops“ und „Oops“ existieren nicht mehr im Branch. Der Parameter `--hard` bewirkt, dass das Arbeitsverzeichnis den neuen Zweigkopf (Branch head) widerspiegelt.
+Our main branch now points to commit v1, and the “Revert Oops” and “Oops” commits no longer exist in the branch. The `--hard` parameter ensures the working directory reflects the new branch head.
 
-## 5. Nichts geht jemals verloren
-Was ist mit den falschen Commits passiert? Sie befinden sich noch im Depot. Eigentlich können wir uns immer noch auf sie beziehen. Zu Beginn der Lektion haben wir das „oops“-Tag für den abgebrochenen Commit erstellt. Werfen wir einen Blick auf alle Commits.
+## 5. Nothing is ever lost
+What happened to the incorrect commits? They are still in the repository. We can still reference them. At the beginning of the lesson, we created the “oops” tag for the reverted commit. Let’s take a look at all commits.
 
-Befehl:  
+Command:  
 ```bash
 git hist --all
 ```
 
-Ergebnis:
+Result:
 ```bash
 # * 744ff5f 2022-01-16 | Revert "Oops, we didn't want this commit" (tag: oops) [Gregor Biswanger]
 # * 076f969 2022-01-16 | Oops, we didn't want this commit [Gregor Biswanger]
@@ -79,14 +80,14 @@ Ergebnis:
 # * b617603 2022-01-14 | First Commit [Gregor Biswanger]
 ```
 
-Wir können sehen, dass die falschen Commits nicht verschwunden sind. Sie werden nicht mehr im Main-Zweig aufgelistet, verbleiben aber weiterhin im Repository. Sie wären immer noch im Repository, wenn wir sie nicht taggen würden, aber dann könnten wir sie nur über ihre Hash-Namen referenzieren. 
+We can see that the incorrect commits have not disappeared. They are no longer listed in the main branch but still remain in the repository. They would still be in the repository even if we didn’t tag them, but then we could only reference them via their hash names.
 
-Nicht referenzierte Commits verbleiben im Repository, bis die Garbage Collection vom System ausgeführt wird.
+Unreferenced commits remain in the repository until garbage collection is performed by the system.
 
-# 6. Gefahren beim zurücksetzen mit `reset`
-Resets auf lokale Branches sind in der Regel harmlos. Die Folgen eines "Unfalls" können durch die Verwendung des richtigen Commit rückgängig gemacht werden.
+## 6. Dangers of resetting with `reset`
+Resets on local branches are generally harmless. The consequences of a “mistake” can be reversed by using the correct commit.
 
-Andere Benutzer, die den Branch teilen, können jedoch verwirrt werden, wenn der Branch auf Remote-Repositories geteilt wird.
+However, other users sharing the branch may become confused if the branch is shared on remote repositories.
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/14-level.md).
+## Complete the level
+Did you do everything correctly? Check it with the `npm start` command inside the Git Adventure directory and unlock the next level (docs/14-level.md).

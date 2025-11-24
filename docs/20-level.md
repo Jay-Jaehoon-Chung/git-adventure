@@ -1,25 +1,27 @@
-# Branch erstellen
-## Ziel
-- Um zu erfahren, wie man einen lokalen Branch im Repository erstellt.
+# Create a Branch
 
-Es ist an der Zeit, unser Hallo-Welt ausdrucksvoller zu machen. Da dies einige Zeit dauern kann, ist es am besten, diese Änderungen in einen neuen Branch (Zweig) zu verschieben, um sie von den Änderungen am Hauptzweig zu isolieren.
+## Goal
+- Learn how to create a local branch in the repository.
 
-## 1. Erstelle einen Branch
-Nennen wir unseren neuen Branch "style".
+It is time to make our Hello World more expressive. Since this may take some time, it is best to move these changes into a new branch to isolate them from changes on the main branch.
 
-Befehl:  
+## 1. Create a branch
+Let’s call our new branch "style".
+
+Command:  
 ```bash
 git checkout -b style
 git status
 ```
 
-**Hinweis:** `git checkout -b <branch name>` ist eine Abkürzung für `git branch <branch name>` gefolgt von `git checkout <branch name>`.
+**Note:** `git checkout -b <branch name>` is a shortcut for  
+`git branch <branch name>` followed by `git checkout <branch name>`.
 
-Beachte dass der `git status` Befehl meldet, dass du dich im style-Zweig befindest.
+Notice that the `git status` command reports that you are now on the style branch.
 
-## 2. Die style.css-Datei hinzufügen
+## 2. Add the style.css file
 
-Befehl:  
+Command:  
 ```bash
 code lib/style.css
 ```
@@ -31,15 +33,15 @@ h1 {
 }
 ```
 
-Befehl:  
+Command:  
 ```bash
 git add lib/style.css
 git commit -m "Added css stylesheet"
 ```
 
-## 3. Ändern der Hauptseite
+## 3. Modify the main page
 
-Update der `hallo.html` Datei, um die style.css-Datei zu laden.
+Update the `hallo.html` file to load the style.css file.
 
 hallo.html:  
 ```html
@@ -54,14 +56,14 @@ hallo.html:
 </html>
 ```
 
-Befehl:  
+Command:  
 ```bash
 git add lib/hallo.html
 git commit -m "Hallo uses style.css"
 ```
 
-## 4. Ändere die index.html
-Update der `index.html` Datei, um die style.css-Datei zu laden.
+## 4. Update index.html
+Update the `index.html` file to load the style.css file.
 
 index.html:  
 ```html
@@ -75,11 +77,11 @@ index.html:
 </html>
 ```
 
-Befehl:  
+Command:  
 ```bash
 git add index.html
 git commit -m "Updated index.html"
 ```
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/21-level.md).
+## Complete the level
+Did you do everything correctly? Check it using the `npm start` command inside the Git Adventure directory and unlock the next level (docs/21-level.md).

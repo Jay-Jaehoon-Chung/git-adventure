@@ -1,15 +1,16 @@
-# Navigieren in Branches
-## Ziele
-- Um zu lernen, wie man zwischen den Repository-Zweigen navigiert.
+# Navigating Branches
 
-Jetzt hat dein Projekt zwei Branches:
+## Goals
+- To learn how to navigate between repository branches.
 
-Befehl:  
+Now your project has two branches:
+
+Command:  
 ```bash
 git hist --all
 ```
 
-Ergebnis:
+Result:
 ```bash
 $ git hist --all
 # * f810921 2022-01-16 | Updated index.html (HEAD -> style) [Gregor Biswanger]
@@ -24,17 +25,17 @@ $ git hist --all
 # * b617603 2022-01-14 | First Commit [Gregor Biswanger]
 ```
 
-## 1. Zum Main Branch wechseln
+## 1. Switch to the main branch
 
-Um zwischen Zweigen zu wechseln, verwende einfach den `git checkout` Befehl.
+To switch between branches, simply use the `git checkout` command.
 
-Befehl:  
+Command:  
 ```bash
 git checkout main
 code lib/hallo.html
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ git checkout main
 # Switched to branch 'main'
@@ -49,17 +50,17 @@ $ code lib/hallo.html
 # </html>
 ```
 
-Jetzt befinden wir uns im Main-Zweig. Dies lässt sich dadurch belegen, dass die `hallo.html` Datei keine Styles aus `style.css` verwendet.
+Now we are on the **main branch**. You can confirm this because the `hallo.html` file does not use styles from `style.css`.
 
-## 2. Kehren wir zum Style-Zweig zurück.
+## 2. Switch back to the style branch
 
-Befehl:  
+Command:  
 ```bash
 git checkout style
 code lib/hallo.html
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ git checkout style
 # Switched to branch 'style'
@@ -75,7 +76,7 @@ $ code lib/hallo.html
 # </html>
 ```
 
-Wir sind wieder beim **Style-Zweig**, was daran zu erkennen ist, dass die `hallo.html`-Datei Styles aus style.css verwendet.
+We are now back on the **style branch**, which you can see because `hallo.html` loads the `style.css` stylesheet.
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/22-level.md).
+## Complete the level
+Did you do everything correctly? Check using the `npm start` command inside the Git Adventure directory and unlock the next level (docs/22-level.md).

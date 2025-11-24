@@ -1,16 +1,18 @@
-# Hinzufügen eines Remote-Repositories
-## Ziel
-- Hinzufügen von unserem ursprünglichen Repo.
+# Adding a Remote Repository
 
-Lass uns das `my-project.git`-Repository zu unserem ursprünglichen Repository hinzufügen.
+## Goal
+- Add our original repository.
 
-Befehl:  
+Let’s add the `my-project.git` repository to our original repository.
+
+Command:  
 ```bash
 cd my-project
 git remote add shared ../my-project.git
 ```
 
-**HINWEIS:** Wir befinden uns jetzt im my-project-Repo.
+**NOTE:** We are now in the `my-project` repository.
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/39-level.md).
+## Complete the level
+Did you do everything correctly?  
+Check it using the `npm start` command inside the Git Adventure directory and unlock the next level (docs/39-level.md).

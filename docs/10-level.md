@@ -1,21 +1,21 @@
-# Lokale Änderungen verwerfen (vor dem Staging)
+# Discard Local Changes (before staging)
 
-## Ziel
-- Lerne wie du deine Änderungen des Arbeitsverzeichnisses wieder verwirfst.
+## Goal
+- Learn how to discard changes in your working directory.
 
-## 1. Auschecken des Main-Zweigs
-Stelle sicher, dass du dich auf dem letzten Commit im Main-Branch befindest, bevor du loslegst.
+## 1. Checking out the main branch
+Make sure you are on the latest commit in the main branch before starting.
 
-Befehl:  
+Command:  
 ```bash
 git checkout main
 ```
 
-## 2. Ändere die hallo.html Datei
-Es kommt vor, dass du eine Datei in deinem lokalen Arbeitsverzeichnis änderst und die festgeschriebenen Änderungen einfach verwerfen möchtest. Hier hilft dir der `Checkout`-Befehl.
+## 2. Modify the hallo.html file
+Sometimes you modify a file in your local working directory and want to simply discard the changes. The `checkout` command helps with this.
 
-Ändere die `hallo.html` mit einem unerwünschten Kommentar.
-  
+Modify the `hallo.html` with an unwanted comment.
+
 ```html
 <html>
   <head>
@@ -27,15 +27,15 @@ Es kommt vor, dass du eine Datei in deinem lokalen Arbeitsverzeichnis änderst u
 </html>
 ```
 
-## 3. Überprüfe den Status
-Überprüfe zunächst den Status des Arbeitsverzeichnisses.
+## 3. Check the status
+First check the status of the working directory.
 
-Befehl:  
+Command:  
 ```bash
 git status
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ git status
 # On branch main
@@ -48,19 +48,19 @@ $ git status
 # no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-Wir sehen, dass die `hallo.html` Datei geändert, aber noch nicht bereitgestellt wurde.
+We see that the `hallo.html` file has been changed but is not staged yet.
 
-## 4. Zurücksetzen der Änderungen im Arbeitsverzeichnis
-Verwende den `checkout` Befehl, um die aktuelle Version der `hallo.html` Datei aus dem Repository auszuchecken.
+## 4. Revert the changes in the working directory
+Use the `checkout` command to check out the current version of the `hallo.html` file from the repository.
 
-Befehl:  
+Command:  
 ```bash
 git checkout hallo.html
 git status
 code hallo.html
 ```
 
-Ergebnis:
+Result:
 ```bash
 $ git checkout hallo.html
 $ git status
@@ -68,7 +68,7 @@ $ git status
 # nothing to commit (working directory clean)
 ```
 
-Der Statusbefehl zeigt an, dass es keine unstagierten Änderungen im Arbeitsverzeichnis gab. Und unser „schlechter Kommentar“ ist nicht mehr in der Datei enthalten.
+The status command shows that there are no unstaged changes in the working directory. And our “bad comment” is no longer in the file.
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/11-level.md).
+## Complete the level
+Did you do everything correctly? Check it with the `npm start` command inside the Git Adventure directory and unlock the next level (docs/11-level.md).

@@ -1,21 +1,22 @@
-# Inside Git: Das .git-Verzeichnis
-## Ziel
-- Um mehr über die Git-Verzeichnisstruktur zu erfahren.
+# Inside Git: The .git Directory
 
-## 1. Das .git-Verzeichnis
-Es ist Zeit, etwas zu recherchieren. Ausgehend vom Stammverzeichnis des Projekts...
+## Goal
+- To learn more about the Git directory structure.
 
-Befehl unter Windows:  
+## 1. The .git Directory
+It’s time to do some exploring. Starting from the project’s root directory…
+
+Command on Windows:  
 ```bash
 dir .git
 ```
 
-Befehl unter Unix/Mac:  
+Command on Unix/Mac:  
 ```bash
 ls -C .git
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ dir .git
 # Datenträger in Laufwerk C: ist Local Disk
@@ -36,25 +37,25 @@ $ dir .git
 # 16.01.2022  20:36                41 ORIG_HEAD
 # 16.01.2022  20:44                46 packed-refs
 # 14.01.2022  22:13    <DIR>          refs
-               8 Datei(en),            582 Bytes
-               5 Verzeichnis(se), 383.015.170.048 Bytes frei
+# 8 File(s), 582 Bytes
+# 5 Dir(s), 383.015.170.048 Bytes free
 ```
 
-Dies ist ein spezieller Ordner, in dem sich all das Git-Zeug befindet. Lass uns das Verzeichnis erkunden.
+This is a special folder where all the internal Git data lives. Let’s explore it.
 
-## 2. Objekt Datenbank
+## 2. Object Database
 
-Befehl unter Windows:  
+Command on Windows:  
 ```cmd
 dir .git\objects
 ```
 
-Befehl unter Unix/Mac:  
+Command on Unix/Mac:  
 ```bash
 ls -C .git/objects
 ```
 
-Ergebnis:  
+Result:  
 ```cmd
 $ dir .git\objects
 ...
@@ -64,49 +65,24 @@ $ dir .git\objects
 15.01.2022  17:38    <DIR>          10
 16.01.2022  21:13    <DIR>          25
 16.01.2022  20:10    <DIR>          2a
-14.01.2022  23:38    <DIR>          2d
-16.01.2022  20:09    <DIR>          3e
-16.01.2022  21:21    <DIR>          3f
-15.01.2022  12:58    <DIR>          41
-16.01.2022  21:13    <DIR>          4a
-15.01.2022  17:40    <DIR>          5a
-16.01.2022  20:57    <DIR>          6e
-16.01.2022  21:22    <DIR>          6f
-15.01.2022  17:39    <DIR>          70
-16.01.2022  20:11    <DIR>          74
-16.01.2022  20:57    <DIR>          7a
-15.01.2022  17:40    <DIR>          80
-16.01.2022  21:22    <DIR>          93
-16.01.2022  20:58    <DIR>          95
-15.01.2022  12:58    <DIR>          98
-16.01.2022  14:03    <DIR>          a6
-14.01.2022  22:14    <DIR>          b6
-15.01.2022  17:40    <DIR>          c4
-15.01.2022  17:39    <DIR>          d9
-14.01.2022  22:13    <DIR>          df
-16.01.2022  20:57    <DIR>          e0
-16.01.2022  20:58    <DIR>          e1
-16.01.2022  20:58    <DIR>          e9
-14.01.2022  22:13    <DIR>          info
-14.01.2022  22:13    <DIR>          pack
 ...
 ```
 
-Du solltest viele Ordner sehen, die mit zwei Zeichen benannt sind. Die ersten beiden Buchstaben des SHA1-Hashes der in Git gespeicherten Objekte sind die Verzeichnisnamen.
+You should see many folders with two‑character names. These are the first two characters of the SHA‑1 hash of Git objects.
 
-## 3. Frage die Datenbankobjekte ab
+## 3. Inspect object database entries
 
-Befehl unter Windows:  
+Command on Windows:  
 ```cmd
 dir .git\objects\<dir>
 ```
 
-Befehl unter Unix/Mac:  
+Command on Unix/Mac:  
 ```bash
 ls -C .git/objects/<dir>
 ```
 
-Ergebnis:  
+Result:
 ```cmd
 $ dir .git\objects\07
 ...
@@ -116,31 +92,31 @@ $ dir .git\objects\07
 ...
 ```
 
-Schauen wir uns einen der Ordner an, die mit zwei Zeichen benannt sind. Es sollten Dateien mit Namen von 38 Zeichen vorhanden sein. Diese Dateien enthalten in Git gespeicherte Objekte. Sie sind komprimiert und verschlüsselt, sodass es unmöglich ist, ihren Inhalt direkt anzuzeigen. Schauen wir uns das Git-Verzeichnis genauer an.
+Inside each folder, you should see files whose names are 38 characters long. These are Git’s stored objects—compressed and encoded. Their content can’t be viewed directly.
 
-## 4. Konfigurationsdatei
+## 4. Configuration File
 
-Befehl:  
+Command:  
 ```cmd
 code .git/config
 ```
 
-Ergebnis:  
+Result:
 ```ini
 [core]
-	repositoryformatversion = 0
-	filemode = false
-	bare = false
-	logallrefupdates = true
-	symlinks = false
-	ignorecase = true
+    repositoryformatversion = 0
+    filemode = false
+    bare = false
+    logallrefupdates = true
+    symlinks = false
+    ignorecase = true
 ```
 
-Diese Konfigurationsdatei wird für jedes einzelne Projekt erstellt. Zumindestens in diesem Projekt überschreiben Einträge in dieser Datei, die Einträge in der `.gitconfig`-Datei deines Hauptverzeichnisses.
+This configuration file is created for each individual project. Entries here override settings in your global `.gitconfig` file.
 
-## 5. Branches und Tags
+## 5. Branches and Tags
 
-Befehl unter Windows:  
+Command on Windows:  
 ```cmd
 dir .git\refs
 dir .git\refs\heads
@@ -148,7 +124,7 @@ dir .git\refs\tags
 code .git/refs/tags/v1
 ```
 
-Befehl unter Unix/Mac:  
+Command on Unix/Mac:  
 ```bash
 ls .git/refs
 ls .git/refs/heads
@@ -156,48 +132,42 @@ ls .git/refs/tags
 code .git/refs/tags/v1
 ```
 
-Ergebnis:  
+Result:
 ```cmd
 $ dir .git\refs
 ...
-14.01.2022  22:13    <DIR>          .
-14.01.2022  22:13    <DIR>          ..
 16.01.2022  21:22    <DIR>          heads
 16.01.2022  20:44    <DIR>          tags
 ...
 
 $ dir .git\refs\heads
 ...
-16.01.2022  21:22    <DIR>          .
-16.01.2022  21:22    <DIR>          ..
 16.01.2022  21:22                41 main
 ...
 
 $ dir .git\refs\tags
 ...
-16.01.2022  20:44    <DIR>          .
-16.01.2022  20:44    <DIR>          ..
 16.01.2022  01:18                41 v1
 16.01.2022  01:22                41 v1-beta
 ...
 
 $ code .git/refs/tags/v1
-Inhalt: 5a9e60b06695c5cf6b84087828f1afaef75032af
+Contents: 5a9e60b06695c5cf6b84087828f1afaef75032af
 ```
 
-Dateien im Unterverzeichnis tags sollten dir vertraut sein. Jede Datei entspricht dem zuvor mit dem `git tag` Befehl erstellten Tag. Sein Inhalt ist nichts anderes als ein an das Tag angehängter Hash-Commit.
+Each file in the tags folder corresponds to a tag created with `git tag`. The file contains the hash of the commit the tag refers to.
 
-Der Heads-Ordner ist fast identisch und wird nicht für Tags, sondern für Branches verwendet. Im Moment haben wir nur einen Branch, und alles, was du in diesem Ordner sehst, ist ein Main-Branch.
+The `heads` directory works the same way, except it stores branch references. Right now, you only have one branch: `main`.
 
-## 6. HEAD Datei
+## 6. HEAD File
 
-Befehl:  
+Command:
 ```cmd
 code .git/HEAD
-Inhalt: ref: refs/heads/main
+Contents: ref: refs/heads/main
 ```
 
-In der HEAD-Datei befindet sich ein Verweis auf den aktuellen Branch. Im Moment muss es der Main-Branch sein.
+This file contains a reference to the currently checked‑out branch. At the moment, it should be the main branch.
 
-## Level abschließen
-Gehe direkt ins nächste Level mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis (docs/19-level.md).
+## Complete the level
+Go directly to the next level with the command `npm start` inside the Git Adventure directory (docs/19-level.md).

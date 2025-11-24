@@ -1,19 +1,20 @@
-# Hinzufügen eines Tracking-Branch
-## Ziel
-- Um zu erfahren, wie man einen lokale Branch hinzufügt, der einen entfernten Branch verfolgt.
+# Adding a Tracking Branch
 
-Branches, die mit remotes/origin beginnen, gehören zum ursprünglichen Repository. Beachte das diese keinen Style-Branch mehr haben, aber er weiß, dass er sich im ursprünglichen Repository befand.
+## Goal
+- To learn how to add a local branch that tracks a remote branch.
 
-## 1. Füge einen lokalen Branch hinzu, der den Remote-Branch verfolgt.
+Branches that begin with `remotes/origin` belong to the original repository. Note that it no longer has a style branch locally, but it knows that it existed in the original repository.
 
-Befehl:  
+## 1. Add a local branch that tracks the remote branch
+
+Command:  
 ```bash
 git branch --track style origin/style
 git branch
 git hist --max-count=2
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ git branch --track style origin/style
 # Branch 'style' set up to track remote branch 'style' from 'origin'.
@@ -27,7 +28,8 @@ $ git hist --max-count=2
 # * 0d4bc09 2022-01-16 | Updated index.html (origin/style, style) [Gregor Biswanger]
 ```
 
-Jetzt können wir den Style-Branch in der Branchliste und im Protokoll sehen.
+Now we can see the style branch in the branch list and the log.
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/37-level.md).
+## Complete the level
+Did you do everything correctly?  
+Check it using the `npm start` command inside the Git Adventure directory and unlock the next level (docs/37-level.md).

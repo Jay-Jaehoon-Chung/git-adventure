@@ -1,20 +1,20 @@
-# Staging der Änderungen
+# Staging the Changes
 
-## Ziele
-Um zu lernen, Änderungen für die bevorstehenden Commits zu inszenieren.
+## Goals
+To learn how to stage changes for upcoming commits.
 
-## 1. Änderungen hinzufügen
-Jetzt befehle Git, Änderungen zu inszenieren (Stagen). Überprüfe den Status.
+## 1. Add changes
+Now instruct Git to stage changes. Check the status.
 
-Befehl:  
+Command:  
 ```bash
 git add hallo.html
 git status
 ```
 
-Du wirst sehen...
+You will see...
 
-Ergebnis:  
+Result:  
 ```bash
 $ git add hallo.html  
 $ git status
@@ -26,9 +26,9 @@ $ git status
 #
 ```
 
-Änderungen an hallo.html wurden inszeniert (staged). Das bedeutet, dass Git von der Änderung weiß, aber sie ist nicht dauerhaft im Repository. Der nächste Commit wird die inszenierten Änderungen enthalten.
+Changes to hallo.html have been staged. This means that Git knows about the change, but it is not permanently in the repository yet. The next commit will include the staged changes.
 
-Solltest du dich entscheiden, die Änderung nicht zu übernehmen, erinnert dich der `git status` Befehl daran, dass du den `git restore` Befehl verwenden kannst, um diese Änderungen rückgängig zu machen.
+If you decide not to apply the change, the `git status` command reminds you that you can use the `git restore` command to undo these changes.
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/04-level.md).
+## Complete the level
+Did you do everything correctly? Check it with the `npm start` command inside the Git Adventure directory and unlock the next level (docs/04-level.md).

@@ -1,17 +1,18 @@
-# Entfernen des oops-Tags
-## Ziel
-- Entfernen des oops-Tags (Aufräumen)
+# Removing the oops Tag
 
-## 1. Entfernung des oops-Tags
-Der Oops-Tag hat seine Funktion erfüllt. Lasse uns diesen Tag entfernen und dem Garbage Collector erlauben, den referenzierten Commit zu löschen.
+## Goal
+- Removing the oops tag (cleanup)
 
-Befehl:  
+## 1. Removing the oops tag
+The oops tag has fulfilled its purpose. Let's remove this tag and allow the garbage collector to delete the referenced commit.
+
+Command:  
 ```bash
 git tag -d oops
 git hist --all
 ```
 
-Ergebnis:
+Result:
 ```bash
 $ git tag -d oops
 # Deleted tag 'oops' (was 744ff5f)
@@ -23,7 +24,7 @@ $ git hist --all
 # * b617603 2022-01-14 | First Commit [Gregor Biswanger]
 ```
 
-Der Opps-Tag erscheint nicht mehr im Repository.
+The oops tag no longer appears in the repository.
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/15-level.md).
+## Complete the level
+Did you do everything correctly? Check it with the `npm start` command inside the Git Adventure directory and unlock the next level (docs/15-level.md).

@@ -1,18 +1,19 @@
-# Verschieben von Dateien
-## Ziel
-- Um zu erfahren, wie man eine Datei innerhalb des Repositories verschiebt.
+# Moving Files
 
-## 1. Verschiebe die Datei hallo.html in das Verzeichnis lib
-Jetzt erstellen wir die Struktur in unserem Repository. Lass uns die Seite in das lib-Verzeichnis verschieben.
+## Goal
+- To learn how to move a file within the repository.
 
-Befehl:  
+## 1. Move the file hallo.html into the lib directory
+Now we create the structure in our repository. Let's move the page into the lib directory.
+
+Command:  
 ```bash
 mkdir lib
 git mv hallo.html lib
 git status
 ```
 
-Ergebnis:
+Result:
 ```bash
 $ mkdir lib
 $ git mv hallo.html lib
@@ -23,20 +24,20 @@ $ git status
 #        renamed:    hallo.html -> lib/hallo.html
 ```
 
-Indem wir Dateien mit Git verschieben, benachrichtigen wir Git über zwei Dinge:
+By moving files with Git, we inform Git of two things:
 
-1. Die `hallo.html`-Datei wurde gelöscht.
-1. Die `lib/hallo.html`-Datei wurde erstellt.
+1. The `hallo.html` file was deleted.  
+2. The `lib/hallo.html` file was created.
 
-Beide Tatsachen sind sofort inszeniert und bereit für einen Commit. Der Git-Status befehl meldet, dass die Datei verschoben wurde.
+Both facts are immediately staged and ready for a commit. The Git status command reports that the file has been moved.
 
-## 2. Eine weitere Möglichkeit, Dateien zu verschieben
+## 2. Another way to move files
 
-Eine positive Tatsache bei Git ist, dass du nicht an die Versionskontrolle denken musst. Was würde passieren, wenn wir die Befehlszeile des Betriebssystems anstelle des Git Befehls zum Verschieben von Dateien verwenden würden?
+A positive aspect of Git is that you don’t have to think about version control. What would happen if we used the operating system’s command line instead of the Git command to move files?
 
-Die folgenden Befehle haben das gleiche Ergebnis wie die oben verwendeten, aber die folgenden erfordern etwas mehr Arbeit.
+The following commands have the same result as those used above, but they require a little more work.
 
-Wir können ebenfalls:
+We can also do:
 ```bash
 mkdir lib
 mv hallo.html lib
@@ -44,13 +45,13 @@ git add lib/hallo.html
 git rm hallo.html
 ```
 
-## 3. Neues Verzeichnis übernehmen
-Lass uns diese Bewegung festhalten.
+## 3. Commit the new directory
+Let’s record this move.
 
-Befehl:  
+Command:  
 ```bash
 git commit -m "Moved hallo.html to lib"
 ```
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/17-level.md).
+## Complete the level
+Did you do everything correctly? Check it with the `npm start` command inside the Git Adventure directory and unlock the next level (docs/17-level.md).

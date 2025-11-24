@@ -1,19 +1,20 @@
 # Bare Repository
-## Ziel
-- Um zu lernen, wie man ein Bare Repository erstellt.
 
-Ein Bare Repository (Ein Git-Repository ohne Arbeitsverzeichnis) wird normalerweise für die gemeinsame Nutzung benötigt.
+## Goal
+- To learn how to create a bare repository.
 
-## 1. Ein Bare-Repository erstellen.
+A bare repository (a Git repository without a working directory) is typically needed for sharing.
 
-Befehl:  
+## 1. Create a bare repository
+
+Command:  
 ```bash
 cd ..
 git clone --bare my-project my-project.git
 dir my-project.git
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ cd ..
 $ git clone --bare my-project my-project.git
@@ -33,7 +34,9 @@ $ dir my-project.git
 # 18.01.2022  10:14    <DIR>          refs
 ```
 
-Typischerweise sind Repositories, die auf „.git“ enden, leer. Wie du sehen kannst, gibt es im my-project.git-Repository kein Arbeitsverzeichnis. Eigentlich ist es nichts anderes als das .git-Verzeichnis eines nicht-nackten Repositorys.
+Repositories that end in “.git” are typically bare. As you can see, there is no working directory in the `my-project.git` repository.  
+It is essentially the same as the `.git` directory of a non-bare repository.
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/38-level.md).
+## Complete the level
+Did you do everything correctly?  
+Check it using the `npm start` command inside the Git Adventure directory and unlock the next level (docs/38-level.md).

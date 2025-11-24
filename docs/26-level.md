@@ -1,17 +1,18 @@
-# Konflikte lösen
-# Ziel
-- Zusammenführungskonflikte lösen lernen.
+# Resolving Conflicts
 
-## 1. Merge den Main-Branch mit Style
-Gehen wir zurück zum Style-Zweig und führen ihn mit einem neuen Main-Zweig zusammen.
+## Goal
+- Learn how to resolve merge conflicts.
 
-Befehl:  
+## 1. Merge the main branch into style
+Let’s return to the style branch and merge it with the new main branch.
+
+Command:  
 ```bash
 git checkout style
 git merge main
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ git checkout style
 # Switched to branch 'style'
@@ -21,7 +22,8 @@ $ git merge main
 # Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-Wenn du die lib/hallo.html öffnest, siehst du:
+If you open `lib/hallo.html`, you will see:
+
 ```html
 <html>
   <head>
@@ -37,10 +39,11 @@ Wenn du die lib/hallo.html öffnest, siehst du:
 </html>
 ```
 
-Der erste Abschnitt ist die Version des HEADS vom aktuellen Zweig (Style). Der zweite Abschnitt ist die Version des Main-Zweigs.
+The first section is the version from **HEAD** (your current branch, style).  
+The second section is the version from the **main** branch.
 
-## 2. Lösung des Konflikts
-Du musst den Konflikt manuell lösen. Nehme die Änderungen an `lib/hallo.html` vor, um das folgende Ergebnis zu erzielen.
+## 2. Resolve the conflict
+You must resolve the conflict manually. Edit `lib/hallo.html` to produce the following result:
 
 ```html
 <!-- Author: Gregor Biswanger (gregor.biswanger@web-enliven.de) -->
@@ -54,23 +57,23 @@ Du musst den Konflikt manuell lösen. Nehme die Änderungen an `lib/hallo.html` 
 </html>
 ```
 
-## 3. Konfliktlösung commiten
+## 3. Commit the conflict resolution
 
-Befehl:  
+Command:  
 ```bash
 git add lib/hallo.html
 git commit -m "Merged main fixed conflict."
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ git add lib/hallo.html
 $ git commit -m "Merged main fixed conflict."
 # [style 0e4ed00] Merged main fixed conflict.
 ```
 
-## 4. Erweitertes Merging
-Git hat keine grafischen Merge-Tools, aber es akzeptiert jedes Merge-Tool von Drittanbietern (Zum Beispiel Visual Studio Code).
+## 4. Advanced merging
+Git does not include graphical merge tools, but it supports any third-party merge tool (for example, Visual Studio Code).
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/27-level.md).
+## Complete the level
+Did you do everything correctly? Check it using the `npm start` command inside the Git Adventure directory and unlock the next level (docs/27-level.md).

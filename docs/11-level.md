@@ -1,9 +1,10 @@
-# Staged Änderungen abbrechen (vor dem Festschreiben)
-## Ziel
-- Erfahre, wie du staged Änderungen rückgängig machen kannst.
+# Canceling Staged Changes (before committing)
 
-## 1. Datei bearbeiten und Änderungen vornehmen
-Nehme Änderungen an der `hallo.html` Datei in Form eines unerwünschten Kommentars vor.
+## Goal
+- Learn how to undo staged changes.
+
+## 1. Edit the file and make changes
+Make changes to the `hallo.html` file in the form of an unwanted comment.
 
 ```html
 <html>
@@ -16,22 +17,22 @@ Nehme Änderungen an der `hallo.html` Datei in Form eines unerwünschten Komment
 </html>
 ```
 
-Stage die geänderte Datei.
+Stage the modified file.
 
-Befehl:  
+Command:  
 ```bash
 git add hallo.html
 ```
 
-## 2. Überprüfe den Status
-Überprüfe den Status unerwünschter Änderungen.
+## 2. Check the status
+Check the status of the unwanted changes.
 
-Befehl:  
+Command:  
 ```bash
 git status
 ```
 
-Ergebnis:  
+Result:  
 ```bash
 $ git status
 # On branch main
@@ -40,25 +41,25 @@ $ git status
 #         modified:   hallo.html
 ```
 
-Der Status zeigt an, dass die Änderung bereitgestellt wurde und zur Übergabe bereit ist.
+The status shows that the change has been staged and is ready to be committed.
 
-## 3. Setze die Pufferzone zurück
-Glücklicherweise zeigt uns der angezeigte Status genau, was wir tun sollten, um gestagte Änderungen rückgängig zu machen.
+## 3. Reset the staging area
+Fortunately, the displayed status tells us exactly what to do to undo staged changes.
 
-Befehl:  
+Command:  
 ```bash
 git restore --staged hallo.html
 ```
 
-## 4. Wechsle zur Commit-Version
+## 4. Switch to the commit version
 
-Befehl:  
+Command:  
 ```bash
 git checkout hallo.html
 git status
 ```
 
-Ergebnis:
+Result:
 ```bash
 $ git checkout hallo.html
 # Updated 1 path from the index
@@ -68,7 +69,7 @@ $ git status
 # nothing to commit (working directory clean)
 ```
 
-Unser Arbeitsverzeichnis ist wieder sauber.
+Our working directory is clean again.
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/12-level.md).
+## Complete the level
+Did you do everything correctly? Check it with the `npm start` command inside the Git Adventure directory and unlock the next level (docs/12-level.md).

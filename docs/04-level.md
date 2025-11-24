@@ -1,15 +1,15 @@
-# Änderungen festhalten
+# Recording Changes
 
-## Ziele
-Änderungen mit Commits speichern.
+## Goals
+Save changes with commits.
 
-## Staging und Committing
+## Staging and Committing
 
-Ein Staging-Schritt in Git ermöglicht es uns, weiterhin Änderungen am Arbeitsverzeichnis vorzunehmen, und wenn du dich entscheidest, mit der Versionskontrolle zu interagieren, kannst du die Änderungen flexibel in kleinen Commits festhalten.
+A staging step in Git allows us to continue making changes to the working directory, and when you decide to interact with version control, you can flexibly record the changes in small commits.
 
-Angenommen, du hast drei Dateien bearbeitet (a.html, b.html und c.html). Danach musst du alle Änderungen festschreiben, sodass die Änderungen an a.html und b.html in ein einziges Commit gehören. Die Änderungen an c.html sind allerdings nicht logisch mit den ersten beiden Dateien verknüpft und soll in einem separaten Commit gespeichert werden.
+Suppose you have edited three files (a.html, b.html, and c.html). After that, you need to commit everything, so that the changes to a.html and b.html belong together in a single commit. The changes to c.html, however, are not logically connected to the first two files and should be stored in a separate commit.
 
-Theoretisch kannst du folgendes tun:
+Theoretically, you can do the following:
 ```bash
 git add a.html
 git add b.html  
@@ -19,34 +19,34 @@ git add c.html
 git commit -m "Unrelated change to c"
 ```
 
-Durch die Trennung von Staging und Commit, können wir ganz einfach Steuern, was in ein Commit aufgenommen werden soll und was nicht.
+By separating staging and committing, we can easily control what should be included in a commit and what should not.
 
-## 1. Änderungen festschreiben
+## 1. Record changes
 
-Nun, genug über das Staging. Lass uns die Änderungen an das Repository übertragen.
+Now, enough about staging. Let’s transfer the changes to the repository.
 
-Als du zuvor mit `git commit` die erste hallo.html-Version in das Repository gespeichert hast, haben wir mit dem -m Paramter ein Kommentar hinzugefügt. Der Commit-Befehl ermöglicht die interaktive Bearbeitung von Kommentaren für den Commit. Jetzt wollen wir sehen, wie es funktioniert.
+When you previously saved the first version of hallo.html into the repository with `git commit`, we added a comment using the -m parameter. The commit command allows interactive editing of commit messages. Now we want to see how that works.
 
-Wenn du den -m Parameter in der Befehlszeile weg lässt, wird git dich in den Editor deiner Wahl aus der Liste (in der Reihenfolge der Priorität) bringen:
+If you omit the -m parameter on the command line, Git will bring you into the editor of your choice from the following list (in order of priority):
 
-- GIT_EDITOR-Umgebungsvariable
-- core.editor Konfigurationseinstellung
-- VISUAL-Umgebungsvariable
-- EDITOR-Umgebungsvariable
+- GIT_EDITOR environment variable  
+- core.editor configuration setting  
+- VISUAL environment variable  
+- EDITOR environment variable  
 
-Ich habe core.editor auf Visual Studio Code gesetzt:  
+I configured core.editor to Visual Studio Code:  
 ```bash
 git config --global core.editor "code --wait"
 ```
 
-Lass uns jetzt Comitten und den Status überprüfen.
+Let’s commit now and check the status.
 
-Befehl:  
+Command:  
 ```bash
 git commit
 ```
 
-In deinem Editor wirst du folgendes sehen:
+In your editor you will see the following:
 
 ```bash
 |  
@@ -60,32 +60,33 @@ In deinem Editor wirst du folgendes sehen:
 #  
 ```
 
-Gebe in der ersten Zeile den Kommentar ein: „Added h1 tag“. Speichere die Datei und beende den Editor. Das solltest du sehen...
+Enter the comment “Added h1 tag” in the first line. Save the file and close the editor. You should see this...
 
-Ergebnis:  
+Result:  
 ```bash
 git commit
 # hint: Waiting for your editor to close the file... 
 # [main 41b3c46] Added h1 tag
 # 1 files changed, 1 insertions(+), 1 deletions(-)
 ```
-## 2. Status überprüfen
 
-Lass uns am Ende den Status überprüfen.
+## 2. Check the status
 
-Befehl:  
+Let’s check the status at the end.
+
+Command:  
 ```bash
 git status
 ```
 
-Ergebnis: 
+Result: 
 ```bash 
 $ git status
 # On branch main
 # nothing to commit (working directory clean)
 ```
 
-Das Arbeitsverzeichnis ist sauber, wir können weiterarbeiten.
+The working directory is clean, we can continue working.
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/05-level.md).
+## Complete the level
+Did you do everything correctly? Check it with the `npm start` command inside the Git Adventure directory and unlock the next level (docs/05-level.md).

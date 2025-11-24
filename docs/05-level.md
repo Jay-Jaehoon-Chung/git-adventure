@@ -1,16 +1,16 @@
-# Die Zustände
+# The States
 
-## Ziel
-- Verstehen, dass Git mit Zuständen arbeitet, nicht mit den Dateien.
+## Goal
+- Understand that Git works with states, not with the files.
 
-Die meisten Versionskontrollsysteme arbeiten mit Dateien. Du fügst die Datei der Quellcodeverwaltung hinzu und das System verfolgt von diesem Moment an die Änderungen.
+Most version control systems work with files. You add the file to source control and the system tracks the changes from that moment on.
 
-Git konzentriert sich auf die Zustände an einer Datei, nicht auf die Datei selbst. Ein `git add file`-Befehl weist Git nicht an, die Datei zum Repository hinzuzufügen, sondern den aktuellen Status der Datei zu notieren, damit sie später festgeschrieben werden kann.
+Git focuses on the states of a file, not the file itself. A `git add file` command does not instruct Git to add the file to the repository, but to record the current state of the file so it can be committed later.
 
-Wir werden versuchen, den Unterschied in dieser Lektion zu untersuchen.
+We will try to explore the difference in this lesson.
 
-## 1. Erste Änderung: Hinzufügen von HTML-Tags
-Ändere die „Hello, World“-Seite so, dass sie die Standard HTML-Tags `<html>` und `<body>` enthält.
+## 1. First change: Adding HTML tags
+Modify the “Hello, World” page so that it contains the standard HTML tags `<html>` and `<body>`.
 
 hallo.html:  
 ```html
@@ -21,16 +21,16 @@ hallo.html:
 </html>
 ```
 
-## 2. Änderung hinzuzufügen
-Füge diese Änderung nun dem Git-Staging hinzu.
+## 2. Add change
+Now add this change to Git staging.
 
-Befehl:  
+Command:  
 ```console
 git add hallo.html
 ```
 
-## 3. Zweite Änderung: Füge die HTML-Header hinzu
-Füge nun die HTML-Header (Abschnitt `<head>`) zur „Hello, World“-Seite hinzu.
+## 3. Second change: Add the HTML header
+Now add the HTML header section (`<head>`) to the “Hello, World” page.
 
 hallo.html:  
 ```html
@@ -43,16 +43,16 @@ hallo.html:
 </html>
 ```
 
-## 4. Überprüfe den aktuellen Status
+## 4. Check the current status
 
-Befehl:  
+Command:  
 ```bash
 git status
 ```  
 
-Du wirst sehen...
+You will see...
 
-Ergebnis:  
+Result:  
 ```bash
 $ git status  
 # On branch main  
@@ -69,27 +69,27 @@ $ git status
 #
 ```
 
-Bitte beachte, dass `hallo.html` im Status doppelt aufgeführt ist. Die erste Änderung (das Hinzufügen von Standard-Tags) wird bereitgestellt und ist bereit für einen Commit. Die zweite Änderung (Hinzufügen von HTML-Headern) ist nicht bereitgestellt. Wenn du jetzt einen Commit durchführen würdest, wären die Header nicht im Repository gespeichert worden.
+Please note that `hallo.html` is listed twice in the status. The first change (adding standard tags) is staged and ready for a commit. The second change (adding HTML headers) is not staged. If you were to commit now, the headers would not be stored in the repository.
 
-Lass uns nachsehen.
+Let’s check.
 
 ## 5. Commit
-Übernehme die gestageden Änderungen (Standardwerte) und überprüfe den Status dann noch einmal.
+Commit the staged changes (standard tags) and check the status again.
 
-Befehl:  
+Command:  
 ```bash
 git commit -m "Added standard HTML page tags"  
 git status  
 ```
 
-Du wirst sehen...
+You will see...
 
-Ergebnis:  
+Result:  
 ```bash
 $ git commit -m "Added standard HTML page tags"
 [master 8c32287] Added standard HTML page tags  
  1 files changed, 3 insertions(+), 1 deletions(-)
-  
+
 $ git status
 # On branch main
 # Changes not staged for commit:
@@ -101,25 +101,25 @@ $ git status
 # no changes added to commit (use "git add" and/or "git commit -a") 
 ```
 
-Der Statusbefehl deutet darauf hin, dass `hallo.html` nicht aufgezeichnete Änderungen aufweist, sich aber nicht mehr in der Pufferzone befindet.
+The status indicates that `hallo.html` has unstaged changes but is no longer in the staging area.
 
-## 6. Hinzufügen der zweiten Änderung
+## 6. Add the second change
 
-Füge die zweite Änderung zum Staging-Bereich hinzu und führe danach den Befehl git status aus.
+Add the second change to the staging area and then run git status.
 
-Befehle:  
+Commands:  
 ```bash
 git add .
 git status
 ```
 
-**Hinweis:** Das aktuelle Verzeichnis (‘.’) ist unsere hinzuzufügende Datei. Dies ist der bequemste Weg, um alle Änderungen zu den Dateien des aktuellen Verzeichnisses und seiner Ordner hinzuzufügen. Aber da es alles hinzufügt, ist es eine gute Idee, den Status vor dem Hinzufügen zu überprüfen, um sicherzustellen, dass du keine Datei hinzufügst, die nicht hinzugefügt werden sollte.
+**Note:** The current directory (‘.’) is our file to add. This is the most convenient way to add all changes in the current directory and its folders. But since it adds everything, it's a good idea to check the status before adding to ensure you are not adding a file you shouldn’t.
 
-Ich wollte, dass du denn `add .` Tick siehst und wir werden später weitere explizite Dateien hinzufügen.
+I wanted you to see the `add .` trick, and we will later add more explicit files.
 
-Du wirst sehen...
+You will see...
 
-Ergebnis:  
+Result:  
 ```bash
 $ git status
 # On branch main
@@ -130,14 +130,14 @@ $ git status
 #
 ```
 
-Die zweite Änderung wurde bereitgestellt und ist bereit für einen Commit.
+The second change has been staged and is ready for a commit.
 
-## 7. Commit der zweiten Änderung
+## 7. Commit the second change
 
-Befehl:  
+Command:  
 ```bash
 git commit -m "Added HTML header"
 ```
 
-## Level abschließen
-Hast du alles richtig gemacht? Überprüfe es mit dem Befehl `npm start` innerhalb vom Git-Adventure Verzeichnis und schalte das nächste Level frei (docs/06-level.md).
+## Complete the level
+Did you do everything correctly? Check it with the command `npm start` inside the Git Adventure directory and unlock the next level (docs/06-level.md).
